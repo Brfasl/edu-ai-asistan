@@ -1,0 +1,2041 @@
+
+> edu-ai-asistan@1.0.0 start
+> expo start --web --clear --offline --port 8081
+
+2026-03-20T17:28:58.392Z expo:env /Users/berfinaslan/Desktop/edu-ai-asistan/.env does not exist, skipping this env file
+2026-03-20T17:28:58.393Z expo:env /Users/berfinaslan/Desktop/edu-ai-asistan/.env.development does not exist, skipping this env file
+2026-03-20T17:28:58.393Z expo:env /Users/berfinaslan/Desktop/edu-ai-asistan/.env.local does not exist, skipping this env file
+2026-03-20T17:28:58.393Z expo:env /Users/berfinaslan/Desktop/edu-ai-asistan/.env.development.local does not exist, skipping this env file
+Networking has been disabled
+Starting project at /Users/berfinaslan/Desktop/edu-ai-asistan
+2026-03-20T17:32:29.589Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T17:33:16.631Z expo:doctor:webSupport Ensuring web support is setup
+2026-03-20T17:33:16.640Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T17:33:16.643Z expo:doctor:dependencies:getMissingPackages Required package "react-dom" found (no version constraint specified).
+2026-03-20T17:33:18.293Z expo:doctor:dependencies:getMissingPackages Required package "react-native-web" found (no version constraint specified).
+2026-03-20T17:33:18.301Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T17:39:49.416Z expo:start:server:devServer Stopping dev server (bundler: metro)
+2026-03-20T17:39:49.417Z expo:start:server:devServer Stopped dev server (bundler: metro)
+2026-03-20T17:40:33.399Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T17:40:57.875Z expo:start:server:metro:router Using app as the root directory for Expo Router.
+2026-03-20T17:55:33.497Z expo:metro:config react-native-reanimated package.json: /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-reanimated/package.json
+2026-03-20T17:55:34.957Z expo:metro:config react-native-worklets package.json: /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-worklets/package.json
+
+Expo Metro config:
+- Version: 54.0.14
+- Extensions: ts, tsx, mjs, js, jsx, json, cjs, scss, sass, css
+- React Native: /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native
+- Watch Folders: 
+- Node Module Paths: 
+- Sass: null
+- Reanimated: 4.1.6
+- Worklets: 0.5.1
+- Babel Runtime: null
+
+React Compiler enabled
+2026-03-20T17:56:03.099Z expo:metro:withMetroResolvers Appending 8 custom resolvers to Metro config. (has custom resolver: false)
+2026-03-20T17:57:11.604Z expo:start:server:urlCreator URL: http://127.0.0.1:8081
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+2026-03-20T18:07:02.336Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T18:07:02.344Z expo:start:server:middleware:serveStatic Serving static files from: /Users/berfinaslan/Desktop/edu-ai-asistan/public
+2026-03-20T18:07:33.232Z expo:start:server:urlCreator URL: exp://127.0.0.1:8081
+2026-03-20T18:07:33.244Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T18:07:33.247Z expo:start:server:developmentSession This project will not be suggested in Expo Go or Dev Clients because Expo CLI is running in CI.
+2026-03-20T18:07:33.249Z expo:start:server:metro:waitForTypescript Watching file changes: [
+  '/Users/berfinaslan/Desktop/edu-ai-asistan/.env.development.local',
+  '/Users/berfinaslan/Desktop/edu-ai-asistan/.env.local',
+  '/Users/berfinaslan/Desktop/edu-ai-asistan/.env.development',
+  '/Users/berfinaslan/Desktop/edu-ai-asistan/.env'
+]
+2026-03-20T18:07:33.250Z expo:doctor:typescriptSupport Ensuring TypeScript support is setup
+2026-03-20T18:07:33.253Z expo:doctor:apple:simulatorApp Simulator app id: com.apple.iphonesimulator
+2026-03-20T18:09:19.279Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T18:09:19.281Z expo:doctor:dependencies:getMissingPackages Required package "typescript" found (no version constraint specified).
+2026-03-20T18:09:21.407Z expo:doctor:dependencies:getMissingPackages Required package "@types/react" found (no version constraint specified).
+2026-03-20T18:09:21.411Z expo:prebuild-config:expo-splash-screen:ios config: {
+  image: './assets/images/splash-icon.png',
+  imageWidth: 200,
+  resizeMode: 'contain',
+  backgroundColor: '#ffffff',
+  dark: { backgroundColor: '#000000' }
+}
+2026-03-20T18:09:21.413Z expo:typed-routes Ensuring typed routes side-effects are setup (experiments.typedRoutes: true, typesDirectory: /Users/berfinaslan/Desktop/edu-ai-asistan/.expo/types)
+Skipping dependency validation in offline mode
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+2026-03-20T18:09:28.347Z expo:start:server:metro:router Using app as the root directory for Expo Router.
+2026-03-20T18:09:45.169Z expo:start:server:metro:metroWatchTypeScriptFiles Waiting for TypeScript files to be added to the project...
+Waiting for Watchman `watch-project` (26s)...
+2026-03-20T18:09:45.183Z expo:start:server:middleware:serveStatic Maybe serve static: /
+2026-03-20T18:09:53.362Z expo:start:server:metro manifest {
+  apiRoutes: [],
+  htmlRoutes: [
+    {
+      file: './(tabs)/index.tsx',
+      page: '/(tabs)/index',
+      namedRegex: /^(?:\/\(tabs\))?(?:\/)?$/,
+      routeKeys: {}
+    },
+    {
+      file: './modal.tsx',
+      page: '/modal',
+      namedRegex: /^\/modal(?:\/)?$/,
+      routeKeys: {}
+    },
+    {
+      file: './(tabs)/explore.tsx',
+      page: '/(tabs)/explore',
+      namedRegex: /^(?:\/\(tabs\))?\/explore(?:\/)?$/,
+      routeKeys: {}
+    },
+    {
+      file: 'expo-router/build/views/Sitemap.js',
+      page: '/_sitemap',
+      namedRegex: /^\/_sitemap(?:\/)?$/,
+      routeKeys: {},
+      generated: true
+    }
+  ],
+  notFoundRoutes: [
+    {
+      file: 'expo-router/build/views/Unmatched.js',
+      page: '/+not-found',
+      namedRegex: /^(?:\/(?<notfound>.+?))?(?:\/)?$/,
+      routeKeys: [Object],
+      generated: true
+    }
+  ],
+  redirects: [],
+  rewrites: [],
+  middleware: undefined
+}
+2026-03-20T18:09:53.369Z expo:start:server:middleware:manifest Resolved entry point: node_modules/expo-router/entry.js (project root: /Users/berfinaslan/Desktop/edu-ai-asistan)
+2026-03-20T18:09:53.371Z expo:start:server:middleware:manifest Resolved entry point: node_modules/expo-router/entry.js (project root: /Users/berfinaslan/Desktop/edu-ai-asistan)
+Watchman `watch-project` finished after 35.2s.
+2026-03-20T18:10:52.375Z expo:start:server:metro:multi-platform Enabling alias: react-native-vector-icons -> @expo/vector-icons
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:32:00.840Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  1.0% (1/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  4.0% (2/3)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  1.0% (1/2)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  4.0% (2/5)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  1.0% (1/2)
+| 2026-03-20T18:32:41.504Z expo:babel:exports Found assignment to module.exports or exports at 39
+2026-03-20T18:32:52.189Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:32:53.408Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react-dom/server.node ->  node:react-dom/server.node
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  4.0% (2/5)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  4.0% (2/3)
+Web node_modules/expo-router/entry.js ▓░░░░░░░░░░░░░░░  9.0% ( 3/10)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  4.0% ( 2/15)
+| 2026-03-20T18:33:08.693Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:33:15.529Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-jsx-dev-runtime.production.js
+Web node_modules/expo-router/entry.js ▓░░░░░░░░░░░░░░░  9.0% ( 3/10)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  4.0% ( 4/21)
+| 2026-03-20T18:33:15.543Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:33:15.538Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:33:21.880Z expo:start:server:metro:multi-platform Redirecting module "/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-web/dist/exports/BackHandler/index.js" to shim
+Web node_modules/expo-router/entry.js ▓░░░░░░░░░░░░░░░  9.0% ( 3/10)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 7/83)
+| 2026-03-20T18:33:20.096Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/_ctx.web.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../app
+| 2026-03-20T18:33:21.245Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:34:52.783Z expo:babel:exports Found assignment to module.exports or exports at 37
+2026-03-20T18:34:54.944Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): debug ->  node:debug
+Web node_modules/expo-router/entry.js ▓░░░░░░░░░░░░░░░  9.0% ( 3/10)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% (11/88)
+| 2026-03-20T18:34:53.534Z expo:babel:exports Found assignment to module.exports or exports at 9
+2026-03-20T18:34:54.952Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓░░░░░░░░░░░░░░░  9.0% ( 3/10)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% (12/89)
+| 2026-03-20T18:34:55.490Z expo:babel:exports Found assignment to module.exports or exports at 9
+Web node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% ( 4/10)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 13/107)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 15/107)
+| 2026-03-20T18:35:29.868Z expo:babel:exports Found assignment to module.exports or exports at 325
+2026-03-20T18:35:29.878Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:35:29.883Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react-dom/client ->  node:react-dom/client
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 20/109)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 24/113)
+2026-03-20T18:35:36.784Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 27/116)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 31/118)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 31/119)
+2026-03-20T18:35:52.145Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.3% ( 36/122)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  9.7% ( 39/125)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░ 11.5% ( 43/128)
+2026-03-20T18:36:05.308Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:05.309Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 14.0% ( 49/131)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 14.0% ( 49/136)
+2026-03-20T18:36:14.408Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:14.412Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:14.413Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:14.413Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:15.867Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:15.868Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:15.869Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:15.869Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:15.878Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:15.878Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:15.878Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:15.888Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:15.888Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:15.888Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:15.900Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:15.900Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:15.900Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 15.6% ( 56/142)
+2026-03-20T18:36:21.398Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:21.400Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:21.400Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:21.400Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 16.1% ( 57/146)
+2026-03-20T18:36:25.223Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:25.223Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:25.224Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 16.1% ( 58/149)
+2026-03-20T18:36:30.220Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:30.220Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:30.220Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:32.879Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:32.880Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:32.883Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:32.883Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:32.883Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:32.905Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:32.905Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:32.905Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 17.2% ( 63/152)
+2026-03-20T18:36:34.439Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:34.440Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:34.441Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:34.447Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 17.7% ( 65/156)
+2026-03-20T18:36:39.836Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:39.837Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:39.838Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:39.838Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:41.134Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:41.134Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:41.134Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 18.2% ( 67/161)
+2026-03-20T18:36:46.236Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:47.473Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:47.473Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:47.474Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:47.482Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:47.484Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:36:47.485Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓░░░░░░░░░░░░░░ 18.2% ( 70/164)
+2026-03-20T18:36:51.758Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:51.762Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:36:51.762Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:51.762Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:53.304Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:53.312Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:36:53.313Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓░░░░░░░░░░░░░ 21.8% ( 78/167)
+2026-03-20T18:36:55.150Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:36:55.163Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:36:55.165Z expo:babel:exports Found assignment to module.exports or exports at 24
+| 2026-03-20T18:36:55.165Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/_ctx-html.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../app
+| 2026-03-20T18:36:56.412Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T18:36:56.425Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:36:56.427Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:36:57.077Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓░░░░░░░░░░░░░ 24.4% ( 86/174)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 87/178)
+| 2026-03-20T18:36:59.917Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:37:06.293Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:37:00.830Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 89/179)
+| 2026-03-20T18:37:11.698Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T18:37:11.713Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:37:11.701Z expo:babel:exports Found assignment to module.exports or exports at 40
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 90/182)
+2026-03-20T18:37:22.195Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:37:12.650Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 92/188)
+| 2026-03-20T18:37:23.569Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:37:24.143Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:37:39.594Z expo:babel:exports Found assignment to module.exports or exports at 5
+| 2026-03-20T18:37:40.238Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:37:40.249Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 96/196)
+| 2026-03-20T18:37:42.201Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 97/197)
+| 2026-03-20T18:37:42.217Z expo:babel:exports Found assignment to module.exports or exports at 8
+2026-03-20T18:37:47.473Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% ( 99/207)
+| 2026-03-20T18:37:49.307Z expo:babel:exports Found assignment to module.exports or exports at 8
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (100/208)
+| 2026-03-20T18:38:02.386Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:38:02.386Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/build/onboard/Tutorial.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../../../app
+| 2026-03-20T18:38:02.395Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/build/onboard/Tutorial.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../../../app
+| 2026-03-20T18:38:02.842Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:38:14.988Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (102/217)
+| 2026-03-20T18:38:15.509Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 8/12)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (103/217)
+| 2026-03-20T18:38:19.827Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:38:24.329Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.4% ( 9/14)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (105/221)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (105/221)
+2026-03-20T18:38:36.987Z expo:start:server:middleware:serveStatic Maybe serve static: /
+2026-03-20T18:38:36.994Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:38:37.006Z expo:start:server:middleware:manifest Resolved entry point: node_modules/expo-router/entry.js (project root: /Users/berfinaslan/Desktop/edu-ai-asistan)
+2026-03-20T18:38:37.007Z expo:start:server:middleware:manifest Resolved entry point: node_modules/expo-router/entry.js (project root: /Users/berfinaslan/Desktop/edu-ai-asistan)
+| 2026-03-20T18:38:37.004Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:38:37.042Z expo:babel:exports Found assignment to module.exports or exports at 461
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (112/232)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:38:43.925Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:38:45.908Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (114/241)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:38:45.922Z expo:babel:exports Found assignment to module.exports or exports at 52
+2026-03-20T18:39:00.090Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:39:00.090Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:39:00.108Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:39:01.896Z expo:start:server:metro:multi-platform Redirecting module "/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-web/dist/exports/AppRegistry/AppContainer.js" to shim
+2026-03-20T18:39:01.898Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:39:00.093Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 25.0% (121/243)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:39:03.975Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+| 2026-03-20T18:39:03.995Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 27.7% (129/245)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:39:05.961Z expo:babel:exports Found assignment to module.exports or exports at 8
+2026-03-20T18:39:09.770Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:39:09.771Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 28.4% (131/246)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:39:09.764Z expo:babel:exports Found assignment to module.exports or exports at 8
+2026-03-20T18:39:27.922Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): postcss-value-parser ->  node:postcss-value-parser
+| 2026-03-20T18:39:25.977Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 28.4% (135/254)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:39:29.476Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react-dom ->  node:react-dom
+2026-03-20T18:39:29.481Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:39:29.481Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:39:29.482Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:39:29.484Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:39:34.089Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): memoize-one ->  node:memoize-one
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 28.7% (137/256)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 28.7% (137/258)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:39:38.282Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:39:38.306Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:39:39.965Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓░░░░░░░░░░░ 32.7% (148/260)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:39:44.977Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:39:44.980Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:39:44.981Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:39:44.982Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓░░░░░░░░░░░ 33.0% (151/263)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:39:46.319Z expo:babel:exports Found assignment to module.exports or exports at 54
+2026-03-20T18:39:47.681Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:39:49.659Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓░░░░░░░░░░░ 36.6% (161/266)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:39:51.091Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:39:51.091Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:39:51.091Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:39:51.106Z expo:babel:exports Found assignment to module.exports or exports at 16
+2026-03-20T18:39:53.837Z expo:metro:tsconfig-paths @/components/ui/collapsible -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/ui/collapsible
+2026-03-20T18:39:53.837Z expo:metro:tsconfig-paths @/components/external-link -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/external-link
+2026-03-20T18:39:53.837Z expo:metro:tsconfig-paths @/components/parallax-scroll-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/parallax-scroll-view
+2026-03-20T18:39:53.837Z expo:metro:tsconfig-paths @/components/themed-text -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-text
+2026-03-20T18:39:53.837Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+2026-03-20T18:39:53.838Z expo:metro:tsconfig-paths @/components/ui/icon-symbol -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/ui/icon-symbol
+2026-03-20T18:39:53.838Z expo:metro:tsconfig-paths @/constants/theme -> /Users/berfinaslan/Desktop/edu-ai-asistan/constants/theme
+2026-03-20T18:39:53.839Z expo:metro:tsconfig-paths @/assets/images/react-logo.png -> /Users/berfinaslan/Desktop/edu-ai-asistan/assets/images/react-logo.png
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (166/275)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:40:08.384Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:40:08.384Z expo:metro:tsconfig-paths @/components/haptic-tab -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/haptic-tab
+2026-03-20T18:40:08.384Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (167/278)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:40:13.576Z expo:metro:tsconfig-paths @/components/hello-wave -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/hello-wave
+2026-03-20T18:40:13.577Z expo:metro:tsconfig-paths @/assets/images/partial-react-logo.png -> /Users/berfinaslan/Desktop/edu-ai-asistan/assets/images/partial-react-logo.png
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (168/280)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:40:22.080Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (169/281)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (169/282)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:40:25.848Z expo:metro:tsconfig-paths @/components/themed-text -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-text
+2026-03-20T18:40:25.848Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+2026-03-20T18:40:25.860Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/createForOfIteratorHelperLoose ->  node:@babel/runtime/helpers/createForOfIteratorHelperLoose
+2026-03-20T18:40:25.860Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:40:25.860Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:40:25.867Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): nullthrows ->  node:nullthrows
+2026-03-20T18:40:25.867Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (171/294)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:40:25.898Z expo:babel:exports Found assignment to module.exports or exports at 37
+2026-03-20T18:40:45.583Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:40:29.334Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T18:40:46.446Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:40:48.324Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): invariant ->  node:invariant
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (173/296)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:40:46.967Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:40:49.027Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (175/298)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:40:54.702Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (178/299)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:40:57.399Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:40:58.585Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (180/299)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:40:59.272Z expo:babel:exports Found assignment to module.exports or exports at 28
+2026-03-20T18:41:04.492Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:41:01.136Z expo:babel:exports Found assignment to module.exports or exports at 36
+| 2026-03-20T18:41:06.423Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:41:06.426Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (184/302)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:08.938Z expo:babel:exports Found assignment to module.exports or exports at 39
+2026-03-20T18:41:10.993Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): fast-deep-equal ->  node:fast-deep-equal
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (185/303)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:10.997Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (187/306)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:16.973Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T18:41:23.920Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): escape-string-regexp ->  node:escape-string-regexp
+| 2026-03-20T18:41:24.006Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (189/310)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:24.625Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:41:26.297Z expo:babel:exports Found assignment to module.exports or exports at 40
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (191/310)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:27.660Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:41:28.424Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:41:36.873Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:41:38.657Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 38.7% (195/316)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:38.946Z expo:babel:exports Found assignment to module.exports or exports at 10
+| 2026-03-20T18:41:40.053Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:41:42.180Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:41:42.340Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 39.8% (200/317)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:45.596Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 40.6% (203/320)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:56.825Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T18:41:58.195Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 41.8% (207/320)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:41:58.811Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:42:01.109Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 42.7% (209/320)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:42:03.712Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 43.5% (211/326)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:04.876Z expo:babel:exports Found assignment to module.exports or exports at 39
+| 2026-03-20T18:42:05.506Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 43.5% (212/326)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:15.609Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:42:25.102Z expo:babel:exports Found assignment to module.exports or exports at 36
+| 2026-03-20T18:42:25.776Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (10/21)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 43.5% (217/329)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:26.501Z expo:babel:exports Found assignment to module.exports or exports at 38
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (11/22)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 43.9% (218/331)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:28.154Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (11/22)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 43.9% (218/331)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:38.447Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:42:38.450Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react.production.js
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (15/25)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 43.9% (219/331)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:42:49.294Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:42:50.652Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-jsx-dev-runtime.production.js
+2026-03-20T18:42:50.653Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:42:50.653Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react-dom/client ->  node:react-dom/client
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 43.9% (220/332)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.7% (222/333)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 45.2% (224/334)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:43:00.501Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:43:00.501Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 48.7% (238/341)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 49.1% (240/352)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 49.1% (241/353)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:43:40.525Z expo:babel:exports Found assignment to module.exports or exports at 12
+2026-03-20T18:43:45.141Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/createPrefixer ->  node:inline-style-prefixer/lib/createPrefixer
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 49.5% (249/355)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:43:40.545Z expo:babel:exports Found assignment to module.exports or exports at 14
+| 2026-03-20T18:43:42.441Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:43:47.907Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓░░░░░░░░░ 49.5% (250/356)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:43:49.775Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:43:49.790Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:43:51.692Z expo:babel:exports Found assignment to module.exports or exports at 38
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 52.4% (262/362)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:44:00.529Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:44:00.529Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/createForOfIteratorHelperLoose ->  node:@babel/runtime/helpers/createForOfIteratorHelperLoose
+2026-03-20T18:44:00.529Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:44:00.529Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:44:00.531Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 53.6% (265/366)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:44:11.252Z expo:metro:tsconfig-paths @/hooks/use-theme-color -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-theme-color
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 53.6% (269/368)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:44:17.953Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:44:17.954Z expo:metro:tsconfig-paths @/components/themed-text -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-text
+2026-03-20T18:44:17.956Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+2026-03-20T18:44:17.956Z expo:metro:tsconfig-paths @/components/ui/icon-symbol -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/ui/icon-symbol
+2026-03-20T18:44:17.956Z expo:metro:tsconfig-paths @/constants/theme -> /Users/berfinaslan/Desktop/edu-ai-asistan/constants/theme
+2026-03-20T18:44:17.956Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+2026-03-20T18:44:17.960Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+2026-03-20T18:44:17.960Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 54.3% (272/369)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:44:20.517Z expo:babel:exports Found assignment to module.exports or exports at 17
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 54.7% (274/371)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:44:26.514Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.0% (276/372)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.5% (278/373)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (279/375)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (281/404)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:44:39.973Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:45:32.149Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+| 2026-03-20T18:45:32.173Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:45:32.176Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+2026-03-20T18:45:32.176Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/createForOfIteratorHelperLoose ->  node:@babel/runtime/helpers/createForOfIteratorHelperLoose
+| 2026-03-20T18:45:34.518Z expo:babel:exports Found assignment to module.exports or exports at 123
+| 2026-03-20T18:45:35.128Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:45:35.136Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (295/404)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (297/405)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:45:37.300Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:45:38.592Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:45:40.588Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (300/406)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:45:41.261Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:45:44.975Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (303/427)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:45:46.617Z expo:babel:exports Found assignment to module.exports or exports at 36
+2026-03-20T18:46:31.552Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): query-string ->  node:query-string
+| 2026-03-20T18:46:31.562Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:46:33.357Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (306/428)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:35.606Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (308/428)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:37.201Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T18:46:39.103Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:46:40.244Z expo:babel:exports Found assignment to module.exports or exports at 37
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (311/429)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:42.073Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:46:44.109Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (314/436)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:46.940Z expo:babel:exports Found assignment to module.exports or exports at 40
+2026-03-20T18:46:53.403Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (315/436)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:58.342Z expo:babel:exports Found assignment to module.exports or exports at 37
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (316/438)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:46:59.223Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:47:08.105Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): invariant ->  node:invariant
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (318/442)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (320/442)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (322/442)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:18.388Z expo:babel:exports Found assignment to module.exports or exports at 37
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (324/442)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:21.915Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (325/444)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:27.090Z expo:babel:exports Found assignment to module.exports or exports at 36
+2026-03-20T18:47:27.103Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (326/444)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:33.305Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (19/28)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (327/447)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:35.532Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.0% (21/30)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (328/447)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:39.843Z expo:babel:exports Found assignment to module.exports or exports at 739
+| 2026-03-20T18:47:41.600Z expo:babel:exports Found assignment to module.exports or exports at 35
+2026-03-20T18:47:41.603Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-dom-client.production.js
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 59.9% (24/31)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (328/447)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (25/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (328/447)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:46.177Z expo:prebuild-config:expo-splash-screen:ios config: {
+2026-03-20T18:47:54.444Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+|   image: './assets/images/splash-icon.png',
+|   imageWidth: 200,
+|   resizeMode: 'contain',
+|   backgroundColor: '#ffffff',
+|   dark: { backgroundColor: '#000000' }
+| }
+| 2026-03-20T18:47:55.902Z expo:babel:exports Found assignment to module.exports or exports at 140
+2026-03-20T18:47:55.916Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/extends ->  node:@babel/runtime/helpers/extends
+2026-03-20T18:47:55.916Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectWithoutPropertiesLoose ->  node:@babel/runtime/helpers/objectWithoutPropertiesLoose
+2026-03-20T18:47:55.918Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (25/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (332/456)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:47:56.966Z expo:babel:inline-manifest public manifest {
+|   name: 'edu-ai-asistan',
+|   slug: 'edu-ai-asistan',
+|   version: '1.0.0',
+|   orientation: 'portrait',
+|   icon: './assets/images/icon.png',
+|   scheme: 'eduaiasistan',
+|   userInterfaceStyle: 'automatic',
+|   newArchEnabled: true,
+|   web: {
+|     output: 'static',
+|     favicon: './assets/images/favicon.png',
+|     meta: undefined,
+|     build: undefined,
+|     scope: undefined,
+|     crossorigin: undefined,
+|     description: undefined,
+|     startUrl: undefined,
+|     shortName: 'edu-ai-asistan',
+|     display: undefined,
+|     orientation: 'portrait',
+|     dir: undefined,
+|     barStyle: undefined,
+|     backgroundColor: undefined,
+|     themeColor: undefined,
+|     lang: undefined,
+|     name: 'edu-ai-asistan'
+|   },
+|   experiments: { typedRoutes: true, reactCompiler: true },
+|   description: undefined,
+|   sdkVersion: '54.0.0',
+|   platforms: [ 'ios', 'android', 'web' ],
+|   extra: { router: {} },
+|   primaryColor: undefined
+| }
+2026-03-20T18:47:59.906Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/objectSpread2 ->  node:@babel/runtime/helpers/objectSpread2
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (25/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.9% (335/458)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 56.5% (345/459)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:48:07.392Z expo:babel:exports Found assignment to module.exports or exports at 325
+2026-03-20T18:48:09.962Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/crossFade ->  node:inline-style-prefixer/lib/plugins/crossFade
+2026-03-20T18:48:09.962Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/imageSet ->  node:inline-style-prefixer/lib/plugins/imageSet
+2026-03-20T18:48:09.962Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/logical ->  node:inline-style-prefixer/lib/plugins/logical
+2026-03-20T18:48:09.963Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/position ->  node:inline-style-prefixer/lib/plugins/position
+2026-03-20T18:48:09.963Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/sizing ->  node:inline-style-prefixer/lib/plugins/sizing
+2026-03-20T18:48:09.963Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): inline-style-prefixer/lib/plugins/transition ->  node:inline-style-prefixer/lib/plugins/transition
+| 2026-03-20T18:48:09.965Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 58.8% (359/468)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:48:12.733Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:48:14.108Z expo:metro:tsconfig-paths @/constants/theme -> /Users/berfinaslan/Desktop/edu-ai-asistan/constants/theme
+2026-03-20T18:48:14.109Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (365/472)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:48:20.962Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T18:48:20.965Z expo:start:server:metro:multi-platform Using React Navigation's web modal implementation.
+| 2026-03-20T18:48:21.847Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (368/474)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (370/479)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:48:29.889Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (372/510)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (375/511)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (376/520)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (377/522)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (380/528)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (381/533)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:50:00.666Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (382/535)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (384/537)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (388/541)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (391/557)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (395/562)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (396/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (401/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (405/572)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:18.481Z expo:babel:exports Found assignment to module.exports or exports at 34
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (410/576)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:51:30.098Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:51:30.117Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:51:30.134Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T18:51:30.135Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): invariant ->  node:invariant
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (426/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:31.498Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T18:51:32.115Z expo:babel:exports Found assignment to module.exports or exports at 9
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (428/578)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:35.184Z expo:babel:exports Found assignment to module.exports or exports at 39
+2026-03-20T18:51:42.622Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (434/583)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:46.644Z expo:babel:exports Found assignment to module.exports or exports at 40
+| 2026-03-20T18:51:46.658Z expo:babel:exports Found assignment to module.exports or exports at 37
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (435/583)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:47.591Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:51:52.978Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (438/587)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:55.240Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:51:57.033Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @radix-ui/react-slot ->  node:@radix-ui/react-slot
+2026-03-20T18:51:57.034Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:51:55.250Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:51:56.724Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (441/588)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:51:58.736Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:51:58.751Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (442/588)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:52:00.503Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (26/40)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (444/600)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:52:06.277Z expo:babel:exports Found assignment to module.exports or exports at 36
+2026-03-20T18:52:21.708Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (29/53)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (445/601)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (31/60)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (445/601)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:52:30.379Z expo:babel:exports Found assignment to module.exports or exports at 24876
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (33/68)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (445/601)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (36/83)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (445/601)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:52:47.718Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (38/86)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (447/601)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (38/86)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (452/613)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:52:52.802Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:52:52.818Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): @babel/runtime/helpers/createForOfIteratorHelperLoose ->  node:@babel/runtime/helpers/createForOfIteratorHelperLoose
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (38/86)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (456/617)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:52:59.953Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:52:59.956Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:52:59.960Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:52:59.967Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:52:59.972Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:52:59.977Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (39/86)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (458/618)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:53:00.565Z expo:babel:exports Found assignment to module.exports or exports at 52
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (467/620)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (471/628)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:53:15.242Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T18:53:16.029Z expo:babel:exports Found assignment to module.exports or exports at 51
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (473/630)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:53:27.114Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (483/630)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:53:31.981Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): color ->  node:color
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (486/631)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:53:33.488Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): color ->  node:color
+2026-03-20T18:53:33.488Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (488/633)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 60.6% (492/635)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:53:43.722Z expo:babel:exports Found assignment to module.exports or exports at 10
+| 2026-03-20T18:53:44.196Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 61.5% (498/635)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 62.5% (502/635)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 63.5% (506/635)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 63.7% (507/637)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 63.9% (511/639)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 64.5% (513/640)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 64.5% (514/643)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 64.7% (518/645)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (520/659)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (523/661)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (41/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (526/678)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (528/681)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (531/685)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:55:13.392Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T18:55:16.966Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-jsx-runtime.production.js
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (538/688)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (539/691)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:55:27.974Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (543/694)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (548/697)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (551/699)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (557/702)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (560/709)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (562/719)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (569/723)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:56:14.351Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (577/726)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:56:20.608Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (581/730)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:56:21.278Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:56:21.929Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:56:21.990Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:56:22.864Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:56:23.814Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T18:56:24.463Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:56:26.588Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T18:56:27.203Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.1% (590/731)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:56:28.621Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:56:30.518Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (43/91)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.3% (596/733)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:56:33.555Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (44/95)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.5% (600/736)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (47/96)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.5% (601/738)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:56:42.964Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/scheduler.production.js
+| 2026-03-20T18:56:39.176Z expo:babel:exports Found assignment to module.exports or exports at 35
+2026-03-20T18:56:44.587Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-dom.production.js
+| 2026-03-20T18:56:39.182Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (60/99)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.5% (601/738)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:56:47.660Z expo:babel:exports Found assignment to module.exports or exports at 54
+2026-03-20T18:56:49.647Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (60/99)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.5% (602/738)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:56:55.220Z expo:babel:exports Found assignment to module.exports or exports at 8
+2026-03-20T18:56:56.128Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 67/104)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.3% (621/746)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:57:05.967Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 70/113)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 70.0% (626/750)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:57:08.416Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T18:57:10.847Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T18:57:12.953Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T18:57:12.960Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 73/120)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.1% (634/752)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:57:14.465Z expo:babel:exports Found assignment to module.exports or exports at 14
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 76/122)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.0% (638/755)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 77/122)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.0% (641/756)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:57:31.413Z expo:babel:exports Found assignment to module.exports or exports at 140
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 81/125)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.0% (647/767)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 84/126)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.0% (653/769)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 85/126)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.1% (659/771)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:57:56.520Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/_ctx.web.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../app
+2026-03-20T18:57:57.161Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 89/129)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.7% (662/772)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 89/129)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.7% (662/773)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:57:59.877Z expo:babel:exports Found assignment to module.exports or exports at 37
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 89/129)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.7% (665/777)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:58:12.891Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): fontfaceobserver ->  node:fontfaceobserver
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 89/129)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.0% (670/780)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:58:14.739Z expo:start:server:metro:multi-platform Redirecting module "/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-web/dist/exports/BackHandler/index.js" to shim
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.7% (674/780)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:58:16.619Z expo:babel:exports Found assignment to module.exports or exports at 325
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (682/815)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:59:10.739Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:59:12.606Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (686/817)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (691/819)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:59:17.962Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:59:21.076Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (698/821)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (709/822)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (718/826)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 76.5% (723/829)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:59:41.356Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 77.4% (730/831)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:59:42.867Z expo:babel:exports Found assignment to module.exports or exports at 3
+2026-03-20T18:59:46.246Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% ( 93/193)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 77.6% (733/832)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T18:59:48.884Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+2026-03-20T18:59:48.893Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T18:59:48.921Z expo:babel:exports Found assignment to module.exports or exports at 117
+| 2026-03-20T18:59:48.930Z expo:babel:exports Found assignment to module.exports or exports at 182
+| 2026-03-20T18:59:48.933Z expo:babel:exports Found assignment to module.exports or exports at 625
+| 2026-03-20T18:59:48.942Z expo:babel:exports Found assignment to module.exports or exports at 625
+| 2026-03-20T18:59:50.510Z expo:babel:exports Found assignment to module.exports or exports at 28
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (102/200)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 79.6% (744/834)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T18:59:51.174Z expo:babel:exports Found assignment to module.exports or exports at 38
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (103/204)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 79.6% (746/837)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:00:00.484Z expo:babel:exports Found assignment to module.exports or exports at 12
+2026-03-20T19:00:03.565Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): color ->  node:color
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (103/204)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 79.7% (748/838)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:00:07.963Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:00:03.568Z expo:babel:exports Found assignment to module.exports or exports at 22
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (103/204)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 79.9% (749/838)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:00:11.969Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:00:03.572Z expo:babel:exports Found assignment to module.exports or exports at 28
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (107/206)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 80.4% (754/842)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (113/208)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 81.9% (763/843)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (115/210)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 82.8% (767/843)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (115/210)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.2% (771/848)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (117/211)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.2% (773/851)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:00:33.503Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T19:00:40.949Z expo:babel:exports Found assignment to module.exports or exports at 1
+2026-03-20T19:00:41.154Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): fast-deep-equal ->  node:fast-deep-equal
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (123/229)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.6% (778/852)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (124/233)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.6% (778/852)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (125/233)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.6% (781/854)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:00:57.807Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (125/233)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.8% (785/867)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:01:01.448Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:01:16.726Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): query-string ->  node:query-string
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (128/235)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.8% (789/869)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:01:19.849Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): escape-string-regexp ->  node:escape-string-regexp
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (128/235)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.8% (793/871)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:01:23.806Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:01:26.037Z expo:babel:exports Found assignment to module.exports or exports at 24
+2026-03-20T19:01:26.149Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (134/254)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 84.2% (800/872)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:01:28.442Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:01:28.499Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:01:31.589Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): fast-deep-equal ->  node:fast-deep-equal
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (136/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (807/887)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:01:34.847Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:01:35.290Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (812/888)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (813/897)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:02:02.782Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:02:03.430Z expo:babel:exports Found assignment to module.exports or exports at 40
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (814/897)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:02:21.154Z expo:babel:exports Found assignment to module.exports or exports at 8
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (820/912)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (828/920)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:02:51.465Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (137/255)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (829/921)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (141/269)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (832/945)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:03:04.309Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T19:03:04.322Z expo:babel:exports Found assignment to module.exports or exports at 48
+| 2026-03-20T19:03:08.082Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:03:08.702Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:03:08.703Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/build/onboard/Tutorial.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../../../app
+| 2026-03-20T19:03:08.709Z expo:babel:router getExpoRouterAppRoot /Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo-router/build/onboard/Tutorial.js /Users/berfinaslan/Desktop/edu-ai-asistan/app ../../../../app
+2026-03-20T19:03:40.225Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:03:40.234Z expo:babel:exports Found assignment to module.exports or exports at 48
+2026-03-20T19:03:42.125Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:03:40.252Z expo:babel:exports Found assignment to module.exports or exports at 15
+| 2026-03-20T19:03:42.165Z expo:babel:exports Found assignment to module.exports or exports at 20
+| 2026-03-20T19:03:42.172Z expo:babel:exports Found assignment to module.exports or exports at 63
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (147/281)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (839/947)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:03:42.766Z expo:babel:exports Found assignment to module.exports or exports at 8
+| 2026-03-20T19:03:51.606Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (152/288)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (841/952)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (154/294)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (848/955)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:04:04.392Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:04:03.145Z expo:babel:exports Found assignment to module.exports or exports at 5
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (154/294)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (852/960)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (171/303)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (852/960)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (182/305)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (856/960)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (187/309)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (864/960)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (190/310)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (867/960)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:04:29.974Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T19:04:29.976Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-is.production.js
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (190/310)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (869/961)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (194/310)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (877/963)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (197/311)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (884/964)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (197/311)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.2% (890/966)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (197/311)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 85.3% (894/968)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (204/318)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.3% (901/970)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (204/318)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.5% (904/976)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (204/318)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.5% (907/982)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (208/321)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 86.6% (915/983)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (211/321)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 87.8% (923/985)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (213/321)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 87.8% (924/987)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:26.720Z expo:babel:exports Found assignment to module.exports or exports at 7
+2026-03-20T19:05:32.838Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:05:27.345Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T19:05:28.208Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (213/321)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 87.8% (925/987)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:34.322Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:34.603Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:35.116Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:40.419Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:05:41.963Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): warn-once ->  node:warn-once
+| 2026-03-20T19:05:40.423Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (219/322)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 88.5% (933/992)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:40.700Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:41.310Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:41.409Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:41.963Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:45.730Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:05:45.740Z expo:start:server:metro:multi-platform Virtualizing Node.js (custom): react ->  node:react
+| 2026-03-20T19:05:46.475Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:47.098Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:47.104Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:47.888Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (227/367)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 89.6% (942/995)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:48.819Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (227/367)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 89.8% (943/995)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:48.854Z expo:babel:exports Found assignment to module.exports or exports at 12
+| 2026-03-20T19:05:48.880Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:48.955Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:50.312Z expo:babel:exports Found assignment to module.exports or exports at 28
+| 2026-03-20T19:05:55.929Z expo:babel:exports Found assignment to module.exports or exports at 8
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (227/367)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 89.8% (946/999)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:05:55.935Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:55.935Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:55.936Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:59.008Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:05:59.623Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (237/369)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 91.2% ( 955/1000)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:06:04.622Z expo:babel:exports Found assignment to module.exports or exports at 36
+2026-03-20T19:06:04.633Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-jsx-runtime.production.js
+| 2026-03-20T19:06:04.630Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (246/396)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 91.4% ( 957/1001)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:06:04.674Z expo:babel:exports Found assignment to module.exports or exports at 59
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (252/398)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.4% ( 964/1003)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (254/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 965/1003)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (255/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 968/1013)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (255/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 973/1016)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (255/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 974/1019)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (255/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 976/1023)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (256/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 980/1026)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (256/406)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 983/1029)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:07:06.960Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-refresh-runtime.production.min.js
+| 2026-03-20T19:06:58.587Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T19:07:06.986Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:04.271Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (257/407)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 986/1033)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (257/407)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 988/1041)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:14.291Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:07:26.372Z expo:metro:tsconfig-paths @/components/haptic-tab -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/haptic-tab
+2026-03-20T19:07:26.372Z expo:metro:tsconfig-paths @/components/ui/icon-symbol -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/ui/icon-symbol
+2026-03-20T19:07:26.372Z expo:metro:tsconfig-paths @/constants/theme -> /Users/berfinaslan/Desktop/edu-ai-asistan/constants/theme
+2026-03-20T19:07:26.372Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+| 2026-03-20T19:07:26.381Z expo:babel:exports Found assignment to module.exports or exports at 1
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (261/413)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 989/1041)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:07:29.867Z expo:metro:tsconfig-paths @/components/ui/collapsible -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/ui/collapsible
+2026-03-20T19:07:29.868Z expo:metro:tsconfig-paths @/components/external-link -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/external-link
+2026-03-20T19:07:29.868Z expo:metro:tsconfig-paths @/components/parallax-scroll-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/parallax-scroll-view
+2026-03-20T19:07:29.868Z expo:metro:tsconfig-paths @/components/themed-text -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-text
+2026-03-20T19:07:29.868Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+2026-03-20T19:07:29.868Z expo:metro:tsconfig-paths @/assets/images/react-logo.png -> /Users/berfinaslan/Desktop/edu-ai-asistan/assets/images/react-logo.png
+| 2026-03-20T19:07:29.183Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:29.251Z expo:babel:exports Found assignment to module.exports or exports at 7
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (274/426)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% ( 993/1041)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:31.881Z expo:babel:exports Found assignment to module.exports or exports at 36
+2026-03-20T19:07:33.378Z expo:metro:tsconfig-paths @/components/hello-wave -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/hello-wave
+2026-03-20T19:07:33.378Z expo:metro:tsconfig-paths @/assets/images/partial-react-logo.png -> /Users/berfinaslan/Desktop/edu-ai-asistan/assets/images/partial-react-logo.png
+2026-03-20T19:07:33.420Z expo:metro:tsconfig-paths @/hooks/use-color-scheme -> /Users/berfinaslan/Desktop/edu-ai-asistan/hooks/use-color-scheme
+2026-03-20T19:07:33.437Z expo:metro:tsconfig-paths @/components/themed-text -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-text
+2026-03-20T19:07:33.437Z expo:metro:tsconfig-paths @/components/themed-view -> /Users/berfinaslan/Desktop/edu-ai-asistan/components/themed-view
+| 2026-03-20T19:07:33.445Z expo:babel:exports Found assignment to module.exports or exports at 18
+| 2026-03-20T19:07:33.446Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:33.462Z expo:babel:exports Found assignment to module.exports or exports at 215
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (297/450)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1001/1048)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:35.728Z expo:metro-config:transform-worker Parsed client boundaries: []
+| 2026-03-20T19:07:35.732Z expo:babel:exports Found assignment to module.exports or exports at 2
+| 2026-03-20T19:07:36.332Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:07:37.001Z expo:babel:exports Found assignment to module.exports or exports at 37
+| 2026-03-20T19:07:48.529Z expo:babel:exports Found assignment to module.exports or exports at 7
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (307/457)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1001/1048)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:48.953Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (309/459)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1002/1048)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:51.410Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:51.413Z expo:babel:exports Found assignment to module.exports or exports at 39
+| 2026-03-20T19:07:54.495Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (309/459)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1002/1048)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:07:55.711Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:55.715Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:07:55.718Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:08.964Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (324/485)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1004/1054)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:15.480Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (326/485)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1010/1054)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (327/486)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1015/1056)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (327/486)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1017/1059)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:18.785Z expo:babel:exports Found assignment to module.exports or exports at 40
+| 2026-03-20T19:08:20.852Z expo:babel:exports Found assignment to module.exports or exports at 36
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (327/486)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.6% (1018/1060)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (329/495)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.8% (1026/1070)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:40.604Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:08:41.117Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (329/495)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.8% (1027/1070)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:48.435Z expo:babel:exports Found assignment to module.exports or exports at 160
+| 2026-03-20T19:08:48.963Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:08:49.914Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:49.925Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:49.957Z expo:babel:exports Found assignment to module.exports or exports at 645
+| 2026-03-20T19:08:51.513Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:51.513Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:51.517Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:08:51.520Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (331/495)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 92.8% (1030/1072)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:51.536Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (331/495)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 93.6% (1040/1075)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:08:55.861Z expo:babel:exports Found assignment to module.exports or exports at 11
+2026-03-20T19:08:59.959Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-compiler-runtime.production.js
+| 2026-03-20T19:08:56.605Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T19:08:57.255Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:09:01.847Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T19:09:01.869Z expo:babel:exports Found assignment to module.exports or exports at 319
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (335/498)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 93.6% (1040/1075)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:09:01.877Z expo:babel:exports Found assignment to module.exports or exports at 42
+| 2026-03-20T19:09:05.150Z expo:babel:exports Found assignment to module.exports or exports at 17
+| 2026-03-20T19:09:05.153Z expo:babel:exports Found assignment to module.exports or exports at 11
+| 2026-03-20T19:09:05.161Z expo:babel:exports Found assignment to module.exports or exports at 28
+| 2026-03-20T19:09:05.166Z expo:babel:exports Found assignment to module.exports or exports at 136
+| 2026-03-20T19:09:05.170Z expo:babel:exports Found assignment to exports at 9
+| 2026-03-20T19:09:05.867Z expo:babel:exports Found assignment to module.exports or exports at 360
+| 2026-03-20T19:09:06.661Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:09:07.534Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (359/505)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 94.5% (1047/1077)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:09:08.260Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:09:10.155Z expo:babel:exports Found assignment to module.exports or exports at 49
+| 2026-03-20T19:09:11.489Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:09:12.118Z expo:babel:exports Found assignment to module.exports or exports at 3
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (360/508)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 94.5% (1047/1077)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:09:29.529Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:09:47.367Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:09:47.369Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (375/525)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 94.5% (1047/1077)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:09:52.801Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-is.production.js
+| 2026-03-20T19:09:47.372Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (395/529)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.0% (1055/1083)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:09:58.570Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:09:58.734Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (398/529)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.0% (1062/1086)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:14.317Z expo:babel:exports Found assignment to module.exports or exports at 39
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (398/529)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.0% (1066/1088)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:14.995Z expo:babel:exports Found assignment to module.exports or exports at 182
+| 2026-03-20T19:10:15.010Z expo:babel:exports Found assignment to module.exports or exports at 6
+2026-03-20T19:10:17.208Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-is.production.min.js
+| 2026-03-20T19:10:15.016Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (398/529)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.9% (1072/1089)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:17.215Z expo:babel:exports Found assignment to module.exports or exports at 16
+| 2026-03-20T19:10:18.248Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:10:18.296Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:10:18.911Z expo:babel:exports Found assignment to module.exports or exports at 22
+| 2026-03-20T19:10:18.921Z expo:babel:exports Found assignment to module.exports or exports at 22
+| 2026-03-20T19:10:18.923Z expo:babel:exports Found assignment to module.exports or exports at 54
+| 2026-03-20T19:10:18.923Z expo:babel:exports Found assignment to module.exports or exports at 28
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (398/529)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 96.9% (1073/1090)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:18.933Z expo:babel:exports Found assignment to module.exports or exports at 80
+| 2026-03-20T19:10:22.350Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T19:10:30.099Z expo:babel:exports Found assignment to module.exports or exports at 2
+| 2026-03-20T19:10:30.108Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:10:30.108Z expo:babel:exports Found assignment to module.exports or exports at 2
+| 2026-03-20T19:10:30.142Z expo:babel:exports Found assignment to module.exports or exports at 59
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (434/543)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 97.6% (1083/1096)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:33.852Z expo:babel:exports Found assignment to module.exports or exports at 4
+| 2026-03-20T19:10:34.497Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:34.511Z expo:babel:exports Found assignment to module.exports or exports at 192
+| 2026-03-20T19:10:34.519Z expo:babel:exports Found assignment to module.exports or exports at 5
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.0% (435/543)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 98.0% (1085/1096)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:34.522Z expo:babel:exports Found assignment to module.exports or exports at 5
+| 2026-03-20T19:10:35.965Z expo:babel:exports Found assignment to module.exports or exports at 3
+| 2026-03-20T19:10:40.194Z expo:babel:exports Found assignment to module.exports or exports at 5
+2026-03-20T19:10:42.324Z expo:start:server:metro:multi-platform Redirecting module "/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/react-native-web/dist/exports/AppRegistry/AppContainer.js" to shim
+| 2026-03-20T19:10:40.196Z expo:babel:exports Found assignment to module.exports or exports at 5
+| 2026-03-20T19:10:40.201Z expo:babel:exports Found assignment to module.exports or exports at 5
+| 2026-03-20T19:10:42.317Z expo:babel:exports Found assignment to module.exports or exports at 5
+| 2026-03-20T19:10:42.332Z expo:babel:exports Found assignment to module.exports or exports at 7
+| 2026-03-20T19:10:42.349Z expo:babel:exports Found assignment to module.exports or exports at 4
+2026-03-20T19:10:42.350Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-refresh-runtime.production.min.js
+| 2026-03-20T19:10:42.373Z expo:babel:exports Found assignment to module.exports or exports at 645
+| 2026-03-20T19:10:42.374Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.381Z expo:babel:exports Found assignment to module.exports or exports at 1
+| 2026-03-20T19:10:42.390Z expo:babel:exports Found assignment to module.exports or exports at 160
+| 2026-03-20T19:10:42.392Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.397Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.401Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.406Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.407Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.414Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.421Z expo:babel:exports Found assignment to module.exports or exports at 182
+| 2026-03-20T19:10:42.427Z expo:babel:exports Found assignment to module.exports or exports at 6
+| 2026-03-20T19:10:42.430Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.7% (458/561)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 98.9% (1092/1098)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:43.792Z expo:babel:exports Found assignment to module.exports or exports at 461
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 66.9% (459/561)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (1098/1098)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:10:52.481Z expo:babel:exports Found assignment to module.exports or exports at 6
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.2% (464/563)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (1098/1098)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+2026-03-20T19:10:57.853Z expo:metro-config:serializer:env-var Stripping environment variable polyfill in server environment.
+2026-03-20T19:10:57.853Z expo:metro-config:serializer:env-var Skipping environment variable inlining in Node.js environment.
+2026-03-20T19:10:57.853Z expo:metro-config:serializer:env-var Stripping environment variable polyfill in server environment.
+2026-03-20T19:11:00.455Z expo:metro-config:serializer:env-var Skipping environment variable inlining in Node.js environment.
+λ Bundled 3599840ms node_modules/expo-router/node/render.js (1098 modules)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.2% (465/565)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (1098/1098)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 1946588ms node_modules/expo-router/node/render.js (1 module)
+2026-03-20T19:11:07.997Z expo:start:server:metro:multi-platform Skipping production module: ./cjs/react-is.production.min.js
+| 2026-03-20T19:10:57.848Z expo:babel:exports Found assignment to module.exports or exports at 4
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.2% (468/567)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:11:11.225Z expo:babel:exports Found assignment to module.exports or exports at 192
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.2% (468/567)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 68.5% (470/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 68.8% (471/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.1% (472/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.6% (474/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.9% (475/568)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 70.3% (477/569)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 70.6% (478/569)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 70.9% (479/569)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.2% (480/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.2% (481/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.5% (482/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.8% (483/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (484/570)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (484/576)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (486/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (487/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (489/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% (490/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.4% (491/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.7% (492/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.0% (493/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.3% (494/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.6% (495/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| 2026-03-20T19:13:21.244Z expo:babel:exports Found assignment to module.exports or exports at 17
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.6% (495/577)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.9% (496/579)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 73.9% (497/579)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.0% (498/579)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.3% (499/579)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.3% (500/584)
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/expo/node_modules/@expo/cli/build/src/utils/errors.js:130
+    throw error;
+    ^
+
+Error: ETIMEDOUT: connection timed out, read
+    at Object.readSync (node:fs:750:18)
+    at tryReadSync (node:fs:424:20)
+    at Object.readFileSync (node:fs:470:19)
+    at Object.getSource (/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/metro/src/DeltaBundler/Transformer.js:145:28)
+    at getModuleSource (/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/metro/src/DeltaBundler/Serializers/helpers/getSourceMapInfo.js:20:17)
+    at getSourceMapInfo (/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/metro/src/DeltaBundler/Serializers/helpers/getSourceMapInfo.js:13:42)
+    at processNextModule (/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/metro/src/DeltaBundler/Serializers/sourceMapGenerator.js:26:48)
+    at Immediate.workLoop (/Users/berfinaslan/Desktop/edu-ai-asistan/node_modules/metro/src/DeltaBundler/Serializers/sourceMapGenerator.js:37:22)
+    at processImmediate (node:internal/timers:483:21)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -60,
+  code: 'ETIMEDOUT',
+  syscall: 'read'
+}
+
+Node.js v20.20.0
