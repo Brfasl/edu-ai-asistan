@@ -1,5 +1,6 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { ScrollView, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
 import { styles } from './style';
@@ -75,7 +76,19 @@ export default function LibraryTabScreen() {
         <Text style={styles.sectionTitle}>BELGE LISTESI</Text>
 
         {documents.map((doc) => (
-          <View key={doc.id} style={styles.card}>
+          <Pressable
+            key={doc.id}
+            style={styles.card}
+            onPress={() =>
+              router.push({
+                pathname: '/library/[id]',
+                params: {
+                  id: doc.id,
+                  name: doc.name,
+                  type: doc.type,
+                },
+              })
+            }>
             <View style={styles.fileIconWrap}>
               {doc.type === 'pdf' ? (
                 <Ionicons name="document-text-outline" size={20} color="#F4A07A" />
@@ -96,7 +109,7 @@ export default function LibraryTabScreen() {
             ) : (
               <MaterialCommunityIcons name="clock-time-four" size={20} color="#F2D33D" />
             )}
-          </View>
+          </Pressable>
         ))}
       </ScrollView>
 
