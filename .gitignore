@@ -36,6 +36,12 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+# API
+backend/dist/
+backend/.env
+backend/prisma/*.db
+backend/prisma/*.db-journal
+
 app-example
 
 # generated native folders
