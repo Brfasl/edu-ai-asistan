@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: edu-ai-asistan-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: edu_ai_asistan
+    ports:
+      - "5432:5432"
+    volumes:
+      - edu_ai_asistan_pgdata:/var/lib/postgresql/data
+
+volumes:
+  edu_ai_asistan_pgdata:
