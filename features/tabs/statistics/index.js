@@ -1,49 +1,93 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useEffect, useMemo, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
+import { apiRequest } from '@/features/common/api/api-client';
+import { useAuth } from '@/features/common/auth/auth-context';
 
 import { styles } from './style';
 
-const WEEKLY_SUMMARY = [
-  { id: 'study', icon: 'time-outline', iconColor: '#2BE26E', label: 'AKTIF CALISMA', value: '12 Saat' },
-  {
-    id: 'tests',
-    icon: 'checkbox-outline',
-    iconColor: '#B683FF',
-    label: 'COZULEN TESTLER',
-    value: '24 Adet',
-  },
-  {
-    id: 'xp',
-    icon: 'flash-outline',
-    iconColor: '#F2D33D',
-    label: 'KAZANILAN XP',
-    value: '1500',
-  },
-];
-
-const COURSE_PERFORMANCE = [
-  { id: 'db', title: 'Veritabani', score: '%85', width: '85%', color: '#2BE26E', icon: 'server-outline' },
-  {
-    id: 'algo',
-    title: 'Algoritma',
-    score: '%72',
-    width: '72%',
-    color: '#B683FF',
-    icon: 'git-branch-outline',
-  },
-  {
-    id: 'ai',
-    title: 'Yapay Zeka',
-    score: '%90',
-    width: '90%',
-    color: '#2BE26E',
-    icon: 'bulb-outline',
-  },
-];
-
 export default function StatisticsTabScreen() {
+  const { token } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [summary, setSummary] = useState(null);
+  const [performance, setPerformance] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    async function run() {
+      try {
+        setLoading(true);
+        setError(null);
+        if (!token) {
+          if (!mounted) return;
+          setSummary(null);
+          setPerformance([]);
+          return;
+        }
+        const [s, p] = await Promise.all([
+          apiRequest('/api/v1/stats/weekly-summary?days=7', { token }),
+          apiRequest('/api/v1/stats/course-performance?days=7', { token }),
+        ]);
+        if (!mounted) return;
+        setSummary(s?.summary || null);
+        setPerformance(p?.performance?.items || []);
+      } catch (e) {
+        if (!mounted) return;
+        setError(e?.message || 'Bir hata oluştu.');
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    }
+    run();
+    return () => {
+      mounted = false;
+    };
+  }, [token]);
+
+  const weeklyCards = useMemo(() => {
+    const studyHours = summary ? Math.round((summary.studyMinutes || 0) / 60) : 0;
+    return [
+      {
+        id: 'study',
+        icon: 'time-outline',
+        iconColor: '#2BE26E',
+        label: 'AKTIF CALISMA',
+        value: `${studyHours} Saat`,
+      },
+      {
+        id: 'tests',
+        icon: 'checkbox-outline',
+        iconColor: '#B683FF',
+        label: 'COZULEN TESTLER',
+        value: `${summary?.testsSolved || 0} Adet`,
+      },
+      {
+        id: 'xp',
+        icon: 'flash-outline',
+        iconColor: '#F2D33D',
+        label: 'KAZANILAN XP',
+        value: `${summary?.xp || 0}`,
+      },
+    ];
+  }, [summary]);
+
+  const courseCards = useMemo(() => {
+    // UI colors/icons are placeholders for now.
+    const palette = ['#2BE26E', '#B683FF', '#F2D33D'];
+    const icons = ['server-outline', 'git-branch-outline', 'bulb-outline'];
+    return performance.map((c, idx) => ({
+      id: `${c.course}-${idx}`,
+      title: c.course,
+      score: `%${c.scorePercent}`,
+      width: `${c.scorePercent}%`,
+      color: palette[idx % palette.length],
+      icon: icons[idx % icons.length],
+    }));
+  }, [performance]);
+
   return (
     <View style={styles.screen}>
       <ScrollView
@@ -69,8 +113,16 @@ export default function StatisticsTabScreen() {
           <View style={styles.sectionLine} />
         </View>
 
+        {!token ? (
+          <Text style={styles.sectionHint}>İstatistikleri görmek için giriş yap.</Text>
+        ) : loading ? (
+          <Text style={styles.sectionHint}>Yukleniyor...</Text>
+        ) : error ? (
+          <Text style={styles.sectionHint}>{error}</Text>
+        ) : null}
+
         <View style={styles.summaryRow}>
-          {WEEKLY_SUMMARY.map((item) => (
+          {weeklyCards.map((item) => (
             <View key={item.id} style={styles.summaryCard}>
               <Ionicons name={item.icon} size={17} color={item.iconColor} />
               <Text style={styles.summaryLabel}>{item.label}</Text>
@@ -109,7 +161,10 @@ export default function StatisticsTabScreen() {
           <Text style={styles.sectionHint}>AI DESTEKLI ANALIZ</Text>
         </View>
 
-        {COURSE_PERFORMANCE.map((course) => (
+        {courseCards.length === 0 ? (
+          <Text style={styles.sectionHint}>Henuz ders verisi yok.</Text>
+        ) : (
+          courseCards.map((course) => (
           <View key={course.id} style={styles.performanceCard}>
             <View style={styles.performanceTop}>
               <View style={styles.performanceLeft}>
@@ -127,7 +182,8 @@ export default function StatisticsTabScreen() {
               <View style={[styles.progressFill, { width: course.width, backgroundColor: course.color }]} />
             </View>
           </View>
-        ))}
+          ))
+        )}
 
         <View style={styles.mentorCard}>
           <View style={styles.mentorBadge}>

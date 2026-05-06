@@ -1,0 +1,317 @@
+{
+  "info": {
+    "name": "edu-ai-asistan-api",
+    "_postman_id": "8f7e2b46-7c3d-4c3b-9c57-1df4c1b2b7a1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "token", "value": "" },
+    { "key": "documentId", "value": "" },
+    { "key": "analysisId", "value": "" }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const token = pm.collectionVariables.get('token');",
+          "if (token && token.length > 0) {",
+          "  pm.request.headers.upsert({ key: 'Authorization', value: `Bearer ${token}` });",
+          "}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /health",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/health", "host": ["{{baseUrl}}"], "path": ["health"] }
+          }
+        },
+        {
+          "name": "GET /api/v1",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/v1", "host": ["{{baseUrl}}"], "path": ["api", "v1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "POST /api/v1/users/register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\",\n  \"name\": \"Test\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "register"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.token) pm.collectionVariables.set('token', json.token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST /api/v1/users/login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "login"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.token) pm.collectionVariables.set('token', json.token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/users/me",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "me"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "item": [
+        {
+          "name": "POST /api/v1/documents",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Algoritma_Final_Ozet.pdf\",\n  \"type\": \"pdf\",\n  \"sizeBytes\": 2457600\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.document && json.document.id) pm.collectionVariables.set('documentId', json.document.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/documents",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/v1/documents/:id",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}"]
+            }
+          }
+        },
+        {
+          "name": "PATCH /api/v1/documents/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"status\": \"done\"\n}" },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/v1/documents/:id/analyze",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Algoritma dersi final özeti: Big-O, veri yapıları, temel arama/sıralama.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/analyze",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "analyze"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.analysis && json.analysis.id) pm.collectionVariables.set('analysisId', json.analysis.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/documents/:id/analysis",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/analysis",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "analysis"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/v1/documents/:id",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}"]
+            }
+          }
+        }
+      ]
+    }
+    ,
+    {
+      "name": "Statistics",
+      "item": [
+        {
+          "name": "POST /api/v1/stats/activity (study)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"study\",\n  \"minutes\": 90,\n  \"course\": \"Algoritma\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats/activity",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats", "activity"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/v1/stats/activity (test)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"test\",\n  \"count\": 24,\n  \"course\": \"Algoritma\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats/activity",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats", "activity"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/v1/stats/activity (xp)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"xp\",\n  \"xp\": 1500,\n  \"course\": \"Algoritma\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats/activity",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats", "activity"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/v1/stats/weekly-summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats/weekly-summary?days=7",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats", "weekly-summary"],
+              "query": [{ "key": "days", "value": "7" }]
+            }
+          }
+        },
+        {
+          "name": "GET /api/v1/stats/course-performance",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats/course-performance?days=7",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats", "course-performance"],
+              "query": [{ "key": "days", "value": "7" }]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+

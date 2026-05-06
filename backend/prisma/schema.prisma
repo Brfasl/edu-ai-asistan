@@ -14,4 +14,70 @@ model User {
   name         String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  documents Document[]
+  activities StudyActivity[]
+}
+
+enum DocumentType {
+  pdf
+  image
+  other
+}
+
+enum DocumentStatus {
+  pending
+  done
+  failed
+}
+
+model Document {
+  id        String         @id @default(uuid())
+  ownerId   String
+  owner     User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name      String
+  type      DocumentType
+  status    DocumentStatus @default(pending)
+  sizeBytes Int?
+
+  analysis  DocumentAnalysis?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ownerId, createdAt])
+}
+
+model DocumentAnalysis {
+  id         String   @id @default(uuid())
+  documentId String   @unique
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  inputText  String?
+  summary    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum ActivityType {
+  study
+  test
+  xp
+}
+
+model StudyActivity {
+  id        String       @id @default(uuid())
+  ownerId   String
+  owner     User         @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  type      ActivityType
+
+  minutes   Int?
+  count     Int?
+  xp        Int?
+  course    String?
+
+  createdAt DateTime @default(now())
+
+  @@index([ownerId, createdAt])
+  @@index([ownerId, course])
 }

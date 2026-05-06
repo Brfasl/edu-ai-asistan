@@ -1,4 +1,5 @@
 import type { FastifyError, FastifyInstance } from "fastify";
+import { Prisma } from "@prisma/client";
 import { ZodError } from "zod";
 import { AppError } from "./errors";
 import type { Env } from "./env";
@@ -11,8 +12,36 @@ type ErrorBody = {
   };
 };
 
-export function registerHttpResponses(app: FastifyInstance, env: Env) {
+export function registerHttpResponses(app: FastifyInstance, _env: Env) {
   app.setErrorHandler((error, _request, reply) => {
+    // Prisma: DB down / pool timeout / etc. -> always return a safe error body
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError ||
+      error instanceof Prisma.PrismaClientInitializationError ||
+      error instanceof Prisma.PrismaClientRustPanicError ||
+      error instanceof Prisma.PrismaClientUnknownRequestError
+    ) {
+      const code = (error as { code?: string }).code;
+      if (code === "P1001" || code === "P1002" || code === "P2024") {
+        app.log.error({ err: error }, "Database unavailable");
+        return reply.status(503).send({
+          error: {
+            code: "DB_UNAVAILABLE",
+            message:
+              "Veritabanına ulaşılamıyor. Lütfen biraz sonra tekrar dene.",
+          },
+        } satisfies ErrorBody);
+      }
+
+      app.log.error({ err: error }, "Database error");
+      return reply.status(500).send({
+        error: {
+          code: "DB_ERROR",
+          message: "Veritabanı hatası.",
+        },
+      } satisfies ErrorBody);
+    }
+
     if (error instanceof AppError) {
       const body: ErrorBody = {
         error: {
@@ -70,15 +99,10 @@ export function registerHttpResponses(app: FastifyInstance, env: Env) {
 
     app.log.error({ err: error }, "Unhandled error");
 
-    const exposeMessage =
-      env.NODE_ENV !== "production" && error instanceof Error && error.message
-        ? error.message
-        : "Sunucu hatası.";
-
     return reply.status(500).send({
       error: {
         code: "INTERNAL_ERROR",
-        message: exposeMessage,
+        message: "Sunucu hatası.",
       },
     } satisfies ErrorBody);
   });

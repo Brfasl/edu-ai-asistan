@@ -1,34 +1,88 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
+import * as DocumentPicker from 'expo-document-picker';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
+import { apiRequest } from '@/features/common/api/api-client';
+import { useAuth } from '@/features/common/auth/auth-context';
 import { styles } from './style';
 
 export default function LibraryTabScreen() {
-  const documents = [
-    {
-      id: '1',
-      name: 'Algoritma_Final_Ozet.pdf',
-      details: 'Bugun • 2.4 MB',
-      type: 'pdf',
-      status: 'done',
-    },
-    {
-      id: '2',
-      name: 'Veritabani_Temelleri.jpg',
-      details: 'Dun • 1.1 MB',
-      type: 'image',
-      status: 'pending',
-    },
-    {
-      id: '3',
-      name: 'Yapay_Zeka_Notlari.pdf',
-      details: '12 Eki • 5.8 MB',
-      type: 'pdf',
-      status: 'done',
-    },
-  ];
+  const { token } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [documents, setDocuments] = useState([]);
+
+  async function onPickDocument() {
+    try {
+      if (!token) {
+        router.push('/login');
+        return;
+      }
+      setError(null);
+      const result = await DocumentPicker.getDocumentAsync({
+        multiple: false,
+        copyToCacheDirectory: false,
+      });
+      if (result.canceled) return;
+      const file = result.assets?.[0];
+      if (!file) return;
+
+      const name = file.name || 'Belge';
+      const sizeBytes = typeof file.size === 'number' ? file.size : undefined;
+      const lower = name.toLowerCase();
+      const type = lower.endsWith('.pdf') ? 'pdf' : lower.match(/\.(png|jpg|jpeg|webp)$/) ? 'image' : 'other';
+
+      await apiRequest('/api/v1/documents', {
+        method: 'POST',
+        token,
+        body: { name, type, sizeBytes },
+      });
+
+      // Refresh list
+      const res = await apiRequest('/api/v1/documents', { token });
+      setDocuments(res?.documents || []);
+    } catch (e) {
+      setError(e?.message || 'Yükleme başarısız.');
+    }
+  }
+
+  useEffect(() => {
+    let mounted = true;
+    async function run() {
+      try {
+        setLoading(true);
+        setError(null);
+        if (!token) {
+          if (!mounted) return;
+          setDocuments([]);
+          return;
+        }
+        const res = await apiRequest('/api/v1/documents', { token });
+        if (!mounted) return;
+        setDocuments(res?.documents || []);
+      } catch (e) {
+        if (!mounted) return;
+        setError(e?.message || 'Bir hata oluştu.');
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    }
+    run();
+    return () => {
+      mounted = false;
+    };
+  }, [token]);
+
+  const viewDocuments = useMemo(() => {
+    return documents.map((doc) => {
+      const sizeMb = doc.sizeBytes ? (doc.sizeBytes / 1024 / 1024).toFixed(1) : null;
+      const details = sizeMb ? `${sizeMb} MB` : '';
+      return { ...doc, details };
+    });
+  }, [documents]);
 
   return (
     <View style={styles.screen}>
@@ -51,7 +105,7 @@ export default function LibraryTabScreen() {
           </View>
         </View>
 
-        <View style={styles.uploadBox}>
+        <Pressable style={styles.uploadBox} onPress={onPickDocument}>
           <View style={styles.uploadIconRow}>
             <View style={[styles.uploadIconCircle, styles.cameraCircle]}>
               <Ionicons name="camera-outline" size={20} color="#2BE26E" />
@@ -62,7 +116,7 @@ export default function LibraryTabScreen() {
           </View>
           <Text style={styles.uploadTitle}>Tiklayarak veya Surukleyerek{'\n'}Belge Sec</Text>
           <Text style={styles.uploadSubtitle}>Galeriden veya Dosyalardan</Text>
-        </View>
+        </Pressable>
 
         <View style={styles.filters}>
           <View style={styles.activeFilter}>
@@ -75,7 +129,18 @@ export default function LibraryTabScreen() {
 
         <Text style={styles.sectionTitle}>BELGE LISTESI</Text>
 
-        {documents.map((doc) => (
+        {loading ? (
+          <Text style={styles.inactiveFilterText}>Yukleniyor...</Text>
+        ) : !token ? (
+          <Pressable onPress={() => router.push('/login')}>
+            <Text style={styles.inactiveFilterText}>Giriş yapman gerekiyor. Tıkla.</Text>
+          </Pressable>
+        ) : error ? (
+          <Text style={styles.inactiveFilterText}>{error}</Text>
+        ) : viewDocuments.length === 0 ? (
+          <Text style={styles.inactiveFilterText}>Henuz belge yok.</Text>
+        ) : (
+          viewDocuments.map((doc) => (
           <Pressable
             key={doc.id}
             style={styles.card}
@@ -101,7 +166,7 @@ export default function LibraryTabScreen() {
               <Text style={styles.fileName} numberOfLines={1}>
                 {doc.name}
               </Text>
-              <Text style={styles.fileDetails}>{doc.details}</Text>
+              {!!doc.details && <Text style={styles.fileDetails}>{doc.details}</Text>}
             </View>
 
             {doc.status === 'done' ? (
@@ -110,7 +175,8 @@ export default function LibraryTabScreen() {
               <MaterialCommunityIcons name="clock-time-four" size={20} color="#F2D33D" />
             )}
           </Pressable>
-        ))}
+          ))
+        )}
       </ScrollView>
 
       <CustomBottomTabs activeRoute="Library" />

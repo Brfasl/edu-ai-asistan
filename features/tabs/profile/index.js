@@ -1,8 +1,10 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
+import { useAuth } from '@/features/common/auth/auth-context';
 
 import { styles } from './style';
 
@@ -20,6 +22,7 @@ const SETTINGS = [
 ];
 
 export default function ProfileTabScreen() {
+  const { user, token, logout } = useAuth();
   return (
     <View style={styles.screen}>
       <SafeAreaView style={styles.safeArea}>
@@ -48,7 +51,7 @@ export default function ProfileTabScreen() {
                 <Text style={styles.levelBadgeText}>LVL 12</Text>
               </View>
             </View>
-            <Text style={styles.name}>Berfin</Text>
+            <Text style={styles.name}>{user?.name || user?.email || 'Misafir'}</Text>
             <Text style={styles.school}>MARMARA UNIVERSITESI</Text>
             <Text style={styles.studentId}>No: 123456</Text>
 
@@ -99,10 +102,21 @@ export default function ProfileTabScreen() {
             ))}
           </View>
 
-          <View style={styles.logoutButton}>
+          {!token ? (
+            <View style={styles.logoutButton}>
+              <Ionicons name="log-in-outline" size={18} color="#161127" />
+              <Text style={styles.logoutText} onPress={() => router.push('/login')}>
+                Giriş Yap
+              </Text>
+            </View>
+          ) : (
+            <View style={styles.logoutButton}>
             <Ionicons name="log-out-outline" size={18} color="#161127" />
-            <Text style={styles.logoutText}>Cikiz Yap</Text>
+            <Text style={styles.logoutText} onPress={logout}>
+              Çıkış Yap
+            </Text>
           </View>
+          )}
         </ScrollView>
       </SafeAreaView>
       <CustomBottomTabs activeRoute="Profile" />
