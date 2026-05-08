@@ -1,11 +1,22 @@
 import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 
 const DEFAULT_BASE_URL = 'http://localhost:3000';
 
-function getBaseUrl() {
+export function getApiBaseUrl() {
   // Expo supports EXPO_PUBLIC_* env vars at build/runtime.
   const explicit = process.env.EXPO_PUBLIC_API_BASE_URL;
   if (explicit) return explicit;
+
+  // Simulator/emulator networking differs by platform.
+  // - iOS Simulator can reach the host machine via localhost.
+  // - Android Emulator reaches the host machine via 10.0.2.2.
+  if (Platform.OS === 'ios' && Constants.isDevice === false) {
+    return DEFAULT_BASE_URL;
+  }
+  if (Platform.OS === 'android' && Constants.isDevice === false) {
+    return 'http://10.0.2.2:3000';
+  }
 
   // Dev helper: derive host IP from Expo runtime (Metro host).
   // Example hostUri: "10.196.121.71:8081"
@@ -23,13 +34,20 @@ function getBaseUrl() {
 }
 
 export async function apiRequest(path, { method = 'GET', token, body } = {}) {
-  const baseUrl = getBaseUrl();
+  const baseUrl = getApiBaseUrl();
   const url = `${baseUrl}${path.startsWith('/') ? path : `/${path}`}`;
+
+  // In React Native, FormData may not always pass `instanceof FormData` reliably.
+  const isFormData =
+    body &&
+    typeof body === 'object' &&
+    typeof body.append === 'function' &&
+    (body?.constructor?.name === 'FormData' || Array.isArray(body?._parts));
 
   const headers = {
     Accept: 'application/json',
   };
-  if (body !== undefined) headers['Content-Type'] = 'application/json';
+  if (body !== undefined && !isFormData) headers['Content-Type'] = 'application/json';
   if (token) headers.Authorization = `Bearer ${token}`;
 
   let res;
@@ -37,7 +55,12 @@ export async function apiRequest(path, { method = 'GET', token, body } = {}) {
     res = await fetch(url, {
       method,
       headers,
-      body: body !== undefined ? JSON.stringify(body) : undefined,
+      body:
+        body === undefined
+          ? undefined
+          : isFormData
+            ? body
+            : JSON.stringify(body),
     });
   } catch (e) {
     const err = new Error(

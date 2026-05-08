@@ -1,13 +1,43 @@
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import * as DocumentPicker from 'expo-document-picker';
 
 import { homeColors } from '@/features/home/styles';
+import { useAuth } from '@/features/common/auth/auth-context';
+import { listDocuments, uploadDocument } from '@/features/common/documents/documents-api';
 
 export function ActionButton({ action }) {
   const isPrimary = action.variant === 'primary';
+  const { token } = useAuth();
+
+  async function onPress() {
+    // Only the "Yeni Belge Yukle" CTA triggers upload for now.
+    if (action?.title !== 'Yeni Belge Yukle') return;
+
+    if (!token) {
+      router.push('/login');
+      return;
+    }
+
+    const result = await DocumentPicker.getDocumentAsync({
+      multiple: false,
+      copyToCacheDirectory: false,
+    });
+    if (result.canceled) return;
+    const file = result.assets?.[0];
+    if (!file) return;
+
+    await uploadDocument({ token, asset: file });
+    // Warm cache / validate backend path; list is used elsewhere.
+    await listDocuments({ token });
+    router.push('/library');
+  }
 
   return (
-    <Pressable style={[styles.button, isPrimary ? styles.primaryButton : styles.secondaryButton]}>
+    <Pressable
+      onPress={onPress}
+      style={[styles.button, isPrimary ? styles.primaryButton : styles.secondaryButton]}>
       <View style={styles.left}>
         <View style={[styles.iconWrap, isPrimary ? styles.primaryIconWrap : styles.secondaryIconWrap]}>
           <Ionicons name={action.iconName} size={18} color={isPrimary ? '#0F4424' : '#C7CCFF'} />

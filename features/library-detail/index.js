@@ -1,8 +1,10 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
+import { useAuth } from '@/features/common/auth/auth-context';
+import { getApiBaseUrl } from '@/features/common/api/api-client';
 import { styles } from './style';
 
 const QUICK_INSIGHTS = [
@@ -58,6 +60,19 @@ export default function LibraryDocumentDetailScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
   const fileName = typeof params.name === 'string' ? params.name : 'Algoritma_Final_Ozet.pdf';
+  const documentId = typeof params.id === 'string' ? params.id : null;
+  const { token } = useAuth();
+
+  async function onOpenDocument() {
+    if (!documentId || !token) return;
+    const baseUrl = getApiBaseUrl();
+    const url = `${baseUrl}/api/v1/documents/${encodeURIComponent(documentId)}/file?token=${encodeURIComponent(token)}`;
+    if (Platform.OS === 'web') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    await Linking.openURL(url);
+  }
 
   return (
     <View style={styles.screen}>
@@ -81,6 +96,11 @@ export default function LibraryDocumentDetailScreen() {
           <Text style={styles.fileTagText} numberOfLines={1}>
             Belge: {fileName}
           </Text>
+          {documentId && token ? (
+            <Pressable onPress={onOpenDocument} style={{ marginLeft: 10 }}>
+              <Text style={{ color: '#2BE26E', fontWeight: '800' }}>Aç</Text>
+            </Pressable>
+          ) : null}
         </View>
 
         <View style={styles.tabsRow}>

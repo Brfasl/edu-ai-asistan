@@ -2,17 +2,19 @@ import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { homeColors } from '@/features/home/styles';
+import { formatDisplayName, getInitial } from '@/features/common/utils/name';
 
 export function HomeHeader({ profile }) {
+  const displayName = formatDisplayName(profile?.name) || 'Misafir';
   return (
     <View style={styles.row}>
       <View style={styles.left}>
         <View style={styles.avatar}>
-          <Text style={styles.avatarText}>{profile.name.charAt(0).toUpperCase()}</Text>
+          <Text style={styles.avatarText}>{getInitial(displayName) || '🙂'}</Text>
         </View>
         <View>
-          <Text style={styles.title}>Merhaba {profile.name}!</Text>
-          <Text style={styles.subtitle}>{profile.greeting}</Text>
+          <Text style={styles.title}>Merhaba {displayName}!</Text>
+          <Text style={styles.subtitle}>{profile?.greeting}</Text>
         </View>
       </View>
       <View style={styles.right}>

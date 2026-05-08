@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 
 import { useAuth } from '@/features/common/auth/auth-context';
+import { formatDisplayName } from '@/features/common/utils/name';
 
 const styles = {
   screen: { flex: 1, backgroundColor: '#06080D', padding: 20, paddingTop: 60 },
@@ -63,7 +64,7 @@ export default function LoginScreen() {
       if (mode === 'login') {
         await login(email.trim(), password);
       } else {
-        await register(email.trim(), password, name.trim());
+        await register(email.trim(), password, formatDisplayName(name));
       }
       router.back();
     } catch (e: any) {

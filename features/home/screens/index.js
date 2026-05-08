@@ -8,15 +8,21 @@ import { StreakCard } from '@/features/home/components/streak-card';
 import { SwipeHint } from '@/features/home/components/swipe-hint';
 import { HOME_SCREEN_DATA } from '@/features/home/data/home-screen-data';
 import { styles } from '@/features/home/screens/style';
+import { useAuth } from '@/features/common/auth/auth-context';
 
 export function HomeScreen() {
+  const { user } = useAuth();
+  const profile = {
+    ...HOME_SCREEN_DATA.profile,
+    name: user?.name || user?.email || HOME_SCREEN_DATA.profile.name,
+  };
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
         overScrollMode="never">
-        <HomeHeader profile={HOME_SCREEN_DATA.profile} />
+        <HomeHeader profile={profile} />
         <View style={styles.sectionGap} />
         <StreakCard streak={HOME_SCREEN_DATA.streak} />
         <DailyGoalCard goal={HOME_SCREEN_DATA.dailyGoal} />

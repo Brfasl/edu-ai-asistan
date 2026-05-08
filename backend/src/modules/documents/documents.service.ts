@@ -16,6 +16,8 @@ function toPublicDocument(doc: Document) {
     type: doc.type,
     status: doc.status,
     sizeBytes: doc.sizeBytes,
+    storagePath: doc.storagePath ?? null,
+    mimeType: doc.mimeType ?? null,
     createdAt: doc.createdAt.toISOString(),
     updatedAt: doc.updatedAt.toISOString(),
   };
@@ -28,6 +30,26 @@ export async function createDocument(ownerId: string, input: CreateDocumentBody)
       name: input.name.trim(),
       type: input.type as DocumentType,
       sizeBytes: input.sizeBytes,
+    },
+  });
+  return toPublicDocument(doc);
+}
+
+export async function createUploadedDocument(ownerId: string, input: {
+  name: string;
+  type: DocumentType;
+  sizeBytes?: number;
+  storagePath: string;
+  mimeType?: string | null;
+}) {
+  const doc = await prisma.document.create({
+    data: {
+      ownerId,
+      name: input.name.trim(),
+      type: input.type,
+      sizeBytes: input.sizeBytes,
+      storagePath: input.storagePath,
+      mimeType: input.mimeType ?? undefined,
     },
   });
   return toPublicDocument(doc);

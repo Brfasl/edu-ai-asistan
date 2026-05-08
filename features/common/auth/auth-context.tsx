@@ -1,5 +1,6 @@
 import * as SecureStore from 'expo-secure-store';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Platform } from 'react-native';
 
 import { apiRequest } from '@/features/common/api/api-client';
 
@@ -23,16 +24,64 @@ type AuthContextValue = {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
+function canUseWebStorage() {
+  return Platform.OS === 'web' && typeof window !== 'undefined' && !!window.localStorage;
+}
+
+async function canUseSecureStore() {
+  try {
+    // Some runtimes (web / misconfigured native) expose the module but not the native methods.
+    if (typeof SecureStore?.getItemAsync !== 'function' || typeof SecureStore?.setItemAsync !== 'function') {
+      return false;
+    }
+    if (typeof SecureStore?.isAvailableAsync === 'function') {
+      return await SecureStore.isAvailableAsync();
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function readToken() {
-  return (await SecureStore.getItemAsync(TOKEN_KEY)) || null;
+  if (await canUseSecureStore()) {
+    try {
+      return (await SecureStore.getItemAsync(TOKEN_KEY)) || null;
+    } catch {
+      // fall through to web storage
+    }
+  }
+  if (canUseWebStorage()) {
+    try {
+      return window.localStorage.getItem(TOKEN_KEY);
+    } catch {
+      return null;
+    }
+  }
+  return null;
 }
 
 async function writeToken(token: string | null) {
-  if (!token) {
-    await SecureStore.deleteItemAsync(TOKEN_KEY);
-    return;
+  if (await canUseSecureStore()) {
+    try {
+      if (!token) {
+        await SecureStore.deleteItemAsync(TOKEN_KEY);
+      } else {
+        await SecureStore.setItemAsync(TOKEN_KEY, token);
+      }
+      return;
+    } catch {
+      // fall through to web storage
+    }
   }
-  await SecureStore.setItemAsync(TOKEN_KEY, token);
+  if (canUseWebStorage()) {
+    try {
+      if (!token) window.localStorage.removeItem(TOKEN_KEY);
+      else window.localStorage.setItem(TOKEN_KEY, token);
+    } catch {
+      // ignore
+    }
+  }
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {

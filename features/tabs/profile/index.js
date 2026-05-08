@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
 import { useAuth } from '@/features/common/auth/auth-context';
+import { formatDisplayName, getInitial } from '@/features/common/utils/name';
 
 import { styles } from './style';
 
@@ -23,6 +24,8 @@ const SETTINGS = [
 
 export default function ProfileTabScreen() {
   const { user, token, logout } = useAuth();
+  const displayName = formatDisplayName(user?.name) || user?.email || 'Misafir';
+  const initial = getInitial(displayName) || 'B';
   return (
     <View style={styles.screen}>
       <SafeAreaView style={styles.safeArea}>
@@ -45,13 +48,13 @@ export default function ProfileTabScreen() {
             <View style={styles.avatarWrap}>
               <View style={styles.avatarGlow} />
               <View style={styles.avatar}>
-                <Text style={styles.avatarInitials}>B</Text>
+                <Text style={styles.avatarInitials}>{initial}</Text>
               </View>
               <View style={styles.levelBadge}>
                 <Text style={styles.levelBadgeText}>LVL 12</Text>
               </View>
             </View>
-            <Text style={styles.name}>{user?.name || user?.email || 'Misafir'}</Text>
+            <Text style={styles.name}>{displayName}</Text>
             <Text style={styles.school}>MARMARA UNIVERSITESI</Text>
             <Text style={styles.studentId}>No: 123456</Text>
 

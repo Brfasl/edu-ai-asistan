@@ -39,6 +39,8 @@ model Document {
   type      DocumentType
   status    DocumentStatus @default(pending)
   sizeBytes Int?
+  storagePath String?
+  mimeType    String?
 
   analysis  DocumentAnalysis?
 

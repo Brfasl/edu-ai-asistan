@@ -5,8 +5,8 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
-import { apiRequest } from '@/features/common/api/api-client';
 import { useAuth } from '@/features/common/auth/auth-context';
+import { listDocuments, uploadDocument } from '@/features/common/documents/documents-api';
 import { styles } from './style';
 
 export default function LibraryTabScreen() {
@@ -30,20 +30,9 @@ export default function LibraryTabScreen() {
       const file = result.assets?.[0];
       if (!file) return;
 
-      const name = file.name || 'Belge';
-      const sizeBytes = typeof file.size === 'number' ? file.size : undefined;
-      const lower = name.toLowerCase();
-      const type = lower.endsWith('.pdf') ? 'pdf' : lower.match(/\.(png|jpg|jpeg|webp)$/) ? 'image' : 'other';
-
-      await apiRequest('/api/v1/documents', {
-        method: 'POST',
-        token,
-        body: { name, type, sizeBytes },
-      });
-
-      // Refresh list
-      const res = await apiRequest('/api/v1/documents', { token });
-      setDocuments(res?.documents || []);
+      await uploadDocument({ token, asset: file });
+      const docs = await listDocuments({ token });
+      setDocuments(docs);
     } catch (e) {
       setError(e?.message || 'Yükleme başarısız.');
     }
@@ -60,9 +49,9 @@ export default function LibraryTabScreen() {
           setDocuments([]);
           return;
         }
-        const res = await apiRequest('/api/v1/documents', { token });
+        const docs = await listDocuments({ token });
         if (!mounted) return;
-        setDocuments(res?.documents || []);
+        setDocuments(docs);
       } catch (e) {
         if (!mounted) return;
         setError(e?.message || 'Bir hata oluştu.');

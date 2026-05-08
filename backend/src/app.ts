@@ -1,5 +1,6 @@
 import cors from "@fastify/cors";
 import jwt from "@fastify/jwt";
+import multipart from "@fastify/multipart";
 import Fastify from "fastify";
 import { registerHttpResponses } from "./core/http-responses";
 import type { Env } from "./core/env";
@@ -17,6 +18,12 @@ export async function buildApp(env: Env) {
 
   await app.register(cors, { origin: true });
   await app.register(jwt, { secret: env.JWT_SECRET });
+  await app.register(multipart, {
+    limits: {
+      fileSize: 25 * 1024 * 1024, // 25MB
+      files: 1,
+    },
+  });
   await app.register(healthPlugin);
   await app.register(v1Plugin, { prefix: "/api/v1" });
 
