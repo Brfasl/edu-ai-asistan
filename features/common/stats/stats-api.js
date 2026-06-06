@@ -39,3 +39,12 @@ export async function getProfileStats({ token } = {}) {
   const res = await apiRequest('/api/v1/stats/profile-stats', { token });
   return res || null;
 }
+
+export async function chatWithAI({ token, messages, goals = [] } = {}) {
+  const res = await apiRequest('/api/v1/ai/chat', {
+    method: 'POST',
+    token,
+    body: { messages, goals },
+  });
+  return res?.reply || '';
+}
