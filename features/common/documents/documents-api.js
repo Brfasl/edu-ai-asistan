@@ -27,7 +27,6 @@ export async function uploadDocument({ token, asset }) {
 
   const form = new FormData();
   if (Platform.OS === 'web') {
-    // On web, FormData must receive a File/Blob. DocumentPicker typically provides `asset.file`.
     const webFile = asset?.file;
     if (webFile) {
       form.append('file', webFile, name);
@@ -38,7 +37,6 @@ export async function uploadDocument({ token, asset }) {
       throw new Error('Dosya seçilemedi.');
     }
   } else {
-    // Native RN: pass { uri, name, type } object
     form.append('file', {
       uri: asset.uri,
       name,
@@ -56,5 +54,24 @@ export async function uploadDocument({ token, asset }) {
     body: form,
   });
   return res?.document;
+}
+
+export async function analyzeDocument({ token, documentId }) {
+  const res = await apiRequest(`/api/v1/documents/${documentId}/analyze`, {
+    method: 'POST',
+    token,
+    body: {},
+  });
+  return res;
+}
+
+export async function getDocumentAnalysis({ token, documentId }) {
+  try {
+    const res = await apiRequest(`/api/v1/documents/${documentId}/analysis`, { token });
+    return res?.analysis || null;
+  } catch (e) {
+    if (e?.status === 404) return null;
+    throw e;
+  }
 }
 

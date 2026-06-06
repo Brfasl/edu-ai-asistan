@@ -57,6 +57,7 @@ model DocumentAnalysis {
 
   inputText  String?
   summary    String
+  resultJson Json?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

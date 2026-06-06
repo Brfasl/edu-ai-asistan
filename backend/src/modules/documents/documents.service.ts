@@ -1,6 +1,8 @@
 import type { Document, DocumentStatus, DocumentType } from "@prisma/client";
 import { prisma } from "../../core/db";
 import { AppError } from "../../core/errors";
+import { loadEnv } from "../../core/env";
+import { analyzeFileWithGemini } from "../ai/gemini.client";
 import type {
   AnalyzeDocumentBody,
   CreateDocumentBody,
@@ -20,6 +22,24 @@ function toPublicDocument(doc: Document) {
     mimeType: doc.mimeType ?? null,
     createdAt: doc.createdAt.toISOString(),
     updatedAt: doc.updatedAt.toISOString(),
+  };
+}
+
+function toPublicAnalysis(analysis: {
+  id: string;
+  documentId: string;
+  summary: string;
+  resultJson: unknown;
+  createdAt: Date;
+  updatedAt: Date;
+}) {
+  return {
+    id: analysis.id,
+    documentId: analysis.documentId,
+    summary: analysis.summary,
+    resultJson: analysis.resultJson ?? null,
+    createdAt: analysis.createdAt.toISOString(),
+    updatedAt: analysis.updatedAt.toISOString(),
   };
 }
 
@@ -112,46 +132,69 @@ export async function analyzeDocument(
     throw new AppError("DOCUMENT_NOT_FOUND", "Belge bulunamadı.", 404);
   }
 
-  // Basit akış: analiz başlıyor → pending; analiz bitti → done + analysis kaydı.
   await prisma.document.update({
     where: { id: documentId },
     data: { status: "pending" },
   });
 
-  const sourceText = input.text?.trim() ?? "";
-  const summary =
-    sourceText.length > 0
-      ? `Özet: ${sourceText.slice(0, 220)}${sourceText.length > 220 ? "..." : ""}`
-      : "Özet: (metin gelmedi) Bu belge için analiz tamamlandı.";
+  try {
+    const env = loadEnv();
 
-  const analysis = await prisma.documentAnalysis.upsert({
-    where: { documentId },
-    create: {
-      documentId,
-      inputText: sourceText.length > 0 ? sourceText : null,
-      summary,
-    },
-    update: {
-      inputText: sourceText.length > 0 ? sourceText : null,
-      summary,
-    },
-  });
+    let analysisResult;
 
-  const updated = await prisma.document.update({
-    where: { id: documentId },
-    data: { status: "done" },
-  });
+    if (doc.storagePath) {
+      // Dosya sunucuda mevcut → Gemini'ye gönder
+      const mimeType = doc.mimeType || (doc.type === "pdf" ? "application/pdf" : "image/png");
+      analysisResult = await analyzeFileWithGemini(doc.storagePath, mimeType, env.GEMINI_API_KEY, env.GEMINI_MODEL);
+    } else if (input.text && input.text.trim().length > 0) {
+      // Dosya yok ama ham metin gönderilmiş (fallback)
+      const sourceText = input.text.trim();
+      analysisResult = {
+        summary: sourceText.slice(0, 500),
+        insights: [],
+        keyTerms: [],
+        studyPlan: [],
+      };
+    } else {
+      throw new AppError("DOCUMENT_FILE_MISSING", "Analiz için dosya veya metin gerekli.", 400);
+    }
 
-  return {
-    document: toPublicDocument(updated),
-    analysis: {
-      id: analysis.id,
-      documentId: analysis.documentId,
-      summary: analysis.summary,
-      createdAt: analysis.createdAt.toISOString(),
-      updatedAt: analysis.updatedAt.toISOString(),
-    },
-  };
+    const analysis = await prisma.documentAnalysis.upsert({
+      where: { documentId },
+      create: {
+        documentId,
+        inputText: input.text?.trim() || null,
+        summary: analysisResult.summary,
+        resultJson: analysisResult as object,
+      },
+      update: {
+        inputText: input.text?.trim() || null,
+        summary: analysisResult.summary,
+        resultJson: analysisResult as object,
+      },
+    });
+
+    const updated = await prisma.document.update({
+      where: { id: documentId },
+      data: { status: "done" },
+    });
+
+    return {
+      document: toPublicDocument(updated),
+      analysis: toPublicAnalysis(analysis),
+    };
+  } catch (err) {
+    await prisma.document.update({
+      where: { id: documentId },
+      data: { status: "failed" },
+    });
+    if (err instanceof AppError) throw err;
+    throw new AppError(
+      "ANALYSIS_FAILED",
+      err instanceof Error ? err.message : "Analiz sırasında bir hata oluştu.",
+      500
+    );
+  }
 }
 
 export async function getDocumentAnalysis(ownerId: string, documentId: string) {
@@ -163,12 +206,6 @@ export async function getDocumentAnalysis(ownerId: string, documentId: string) {
   if (!analysis) {
     throw new AppError("ANALYSIS_NOT_FOUND", "Bu belge için analiz yok.", 404);
   }
-  return {
-    id: analysis.id,
-    documentId: analysis.documentId,
-    summary: analysis.summary,
-    createdAt: analysis.createdAt.toISOString(),
-    updatedAt: analysis.updatedAt.toISOString(),
-  };
+  return toPublicAnalysis(analysis);
 }
 
