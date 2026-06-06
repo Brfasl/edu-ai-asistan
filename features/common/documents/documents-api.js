@@ -75,3 +75,12 @@ export async function getDocumentAnalysis({ token, documentId }) {
   }
 }
 
+export async function generateTargetedQuiz({ token, documentId, wrongQuestions }) {
+  const res = await apiRequest(`/api/v1/documents/${documentId}/targeted-quiz`, {
+    method: 'POST',
+    token,
+    body: { wrongQuestions },
+  });
+  return res?.questions || [];
+}
+

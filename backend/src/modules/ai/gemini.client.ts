@@ -6,7 +6,11 @@ export interface AnalysisResult {
   insights: { title: string; body: string }[];
   keyTerms: string[];
   studyPlan: string[];
+  quizQuestions: { question: string; options: string[]; correctIndex: number }[];
+  flashcards: { term: string; definition: string }[];
 }
+
+export type QuizQuestion = { question: string; options: string[]; correctIndex: number };
 
 const PROMPT = `Bu belgeyi analiz et ve YALNIZCA aşağıdaki JSON formatında yanıt ver (markdown kod bloğu veya başka hiçbir şey ekleme):
 {
@@ -17,7 +21,42 @@ const PROMPT = `Bu belgeyi analiz et ve YALNIZCA aşağıdaki JSON formatında y
     {"title": "Kısa başlık", "body": "Kısa açıklama, 1-2 cümle"}
   ],
   "keyTerms": ["terim1", "terim2", "terim3", "terim4", "terim5"],
-  "studyPlan": ["Gün 1: kısa görev", "Gün 2: kısa görev", "Gün 3: kısa görev"]
+  "studyPlan": ["Gün 1: kısa görev", "Gün 2: kısa görev", "Gün 3: kısa görev"],
+  "quizQuestions": [
+    {
+      "question": "Belgeyle ilgili soru?",
+      "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"],
+      "correctIndex": 0
+    },
+    {
+      "question": "Belgeyle ilgili soru?",
+      "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Belgeyle ilgili soru?",
+      "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Belgeyle ilgili soru?",
+      "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Belgeyle ilgili soru?",
+      "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"],
+      "correctIndex": 0
+    }
+  ],
+  "flashcards": [
+    {"term": "Terim 1", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"},
+    {"term": "Terim 2", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"},
+    {"term": "Terim 3", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"},
+    {"term": "Terim 4", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"},
+    {"term": "Terim 5", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"},
+    {"term": "Terim 6", "definition": "Bu terimin kısa ve anlaşılır Türkçe tanımı"}
+  ]
 }`;
 
 export async function analyzeFileWithGemini(
@@ -57,5 +96,46 @@ export async function analyzeFileWithGemini(
     insights: Array.isArray(parsed.insights) ? parsed.insights : [],
     keyTerms: Array.isArray(parsed.keyTerms) ? parsed.keyTerms : [],
     studyPlan: Array.isArray(parsed.studyPlan) ? parsed.studyPlan : [],
+    quizQuestions: Array.isArray(parsed.quizQuestions) ? parsed.quizQuestions : [],
+    flashcards: Array.isArray(parsed.flashcards) ? parsed.flashcards : [],
   };
+}
+
+export async function generateTargetedQuiz(
+  wrongQuestions: { question: string; correctAnswer: string }[],
+  contextSummary: string,
+  contextTerms: string[],
+  apiKey: string,
+  modelName = "gemini-2.5-flash"
+): Promise<QuizQuestion[]> {
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({ model: modelName });
+
+  const wrongList = wrongQuestions
+    .map((q, i) => `${i + 1}. Soru: "${q.question}"\n   Doğru Cevap: "${q.correctAnswer}"`)
+    .join("\n");
+
+  const prompt = `Konu özeti: ${contextSummary}
+Anahtar terimler: ${contextTerms.join(", ")}
+
+Öğrenci aşağıdaki sorularda hata yaptı:
+${wrongList}
+
+Bu konulardaki eksiklikleri gidermek için 5 yeni çoktan seçmeli soru üret.
+Sorular orijinal sorulardan farklı olsun ama aynı konuları farklı açılardan test etsin.
+YALNIZCA aşağıdaki JSON array formatında yanıt ver (başka hiçbir şey yazma):
+[
+  {"question": "Soru metni?", "options": ["A) seçenek", "B) seçenek", "C) seçenek", "D) seçenek"], "correctIndex": 0}
+]`;
+
+  const result = await model.generateContent([{ text: prompt }]);
+  const text = result.response.text().trim();
+
+  const jsonMatch = text.match(/\[[\s\S]*\]/);
+  if (!jsonMatch) throw new Error("Gemini hedefli quiz için geçerli JSON döndürmedi.");
+
+  const parsed = JSON.parse(jsonMatch[0]);
+  if (!Array.isArray(parsed)) throw new Error("Beklenen array formatı değil.");
+
+  return parsed as QuizQuestion[];
 }

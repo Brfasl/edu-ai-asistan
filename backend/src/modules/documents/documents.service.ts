@@ -2,11 +2,12 @@ import type { Document, DocumentStatus, DocumentType } from "@prisma/client";
 import { prisma } from "../../core/db";
 import { AppError } from "../../core/errors";
 import { loadEnv } from "../../core/env";
-import { analyzeFileWithGemini } from "../ai/gemini.client";
+import { analyzeFileWithGemini, generateTargetedQuiz } from "../ai/gemini.client";
 import type {
   AnalyzeDocumentBody,
   CreateDocumentBody,
   ListDocumentsQuery,
+  TargetedQuizBody,
   UpdateDocumentBody,
 } from "./document.schemas";
 
@@ -207,5 +208,39 @@ export async function getDocumentAnalysis(ownerId: string, documentId: string) {
     throw new AppError("ANALYSIS_NOT_FOUND", "Bu belge için analiz yok.", 404);
   }
   return toPublicAnalysis(analysis);
+}
+
+export async function getTargetedQuiz(
+  ownerId: string,
+  documentId: string,
+  input: TargetedQuizBody
+) {
+  const doc = await prisma.document.findFirst({ where: { id: documentId, ownerId } });
+  if (!doc) throw new AppError("DOCUMENT_NOT_FOUND", "Belge bulunamadı.", 404);
+
+  // Mevcut analizden konu bağlamını al (dosyayı yeniden göndermeden)
+  const analysis = await prisma.documentAnalysis.findUnique({ where: { documentId } });
+  const resultJson = analysis?.resultJson as Record<string, unknown> | null;
+  const contextSummary = (resultJson?.summary as string) ?? analysis?.summary ?? "";
+  const contextTerms = Array.isArray(resultJson?.keyTerms) ? (resultJson.keyTerms as string[]) : [];
+
+  const env = loadEnv();
+
+  try {
+    const questions = await generateTargetedQuiz(
+      input.wrongQuestions,
+      contextSummary,
+      contextTerms,
+      env.GEMINI_API_KEY,
+      env.GEMINI_MODEL
+    );
+    return { questions };
+  } catch (err) {
+    throw new AppError(
+      "TARGETED_QUIZ_FAILED",
+      err instanceof Error ? err.message : "Hedefli quiz oluşturulamadı.",
+      500
+    );
+  }
 }
 

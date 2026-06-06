@@ -33,6 +33,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="pomodoro"
+        options={{
+          title: 'Pomodoro',
+          tabBarIcon: ({ color }) => <Ionicons size={22} name="timer-outline" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="statistics"
         options={{
           title: 'Istatistikler',

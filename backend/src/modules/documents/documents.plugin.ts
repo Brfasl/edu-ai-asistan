@@ -8,6 +8,7 @@ import {
   analyzeDocumentBodySchema,
   createDocumentBodySchema,
   listDocumentsQuerySchema,
+  targetedQuizBodySchema,
   updateDocumentBodySchema,
 } from "./document.schemas";
 import {
@@ -17,6 +18,7 @@ import {
   deleteDocument,
   getDocument,
   getDocumentAnalysis,
+  getTargetedQuiz,
   listDocuments,
   updateDocument,
 } from "./documents.service";
@@ -89,7 +91,11 @@ export const documentsPlugin: FastifyPluginAsync = async (app) => {
       throw new AppError("DOCUMENT_FILE_MISSING", "Bu belge için dosya bulunamadı.", 404);
     }
 
-    const contentType = doc.mimeType || "application/octet-stream";
+    const contentType =
+      doc.mimeType ||
+      (doc.type === "pdf" ? "application/pdf" :
+       doc.type === "image" ? "image/jpeg" :
+       "application/octet-stream");
     const safeBaseName = path.basename(doc.name || "belge").replace(/[\r\n"]/g, "");
     const encoded = encodeURIComponent(doc.name || "belge");
 
@@ -214,6 +220,17 @@ export const documentsPlugin: FastifyPluginAsync = async (app) => {
     const { id } = request.params as { id: string };
     const analysis = await getDocumentAnalysis(sub, id);
     return { analysis };
+  });
+
+  app.post("/:id/targeted-quiz", async (request, reply) => {
+    const sub = await getSubjectFromAuth(request);
+    const { id } = request.params as { id: string };
+    const parsed = targetedQuizBodySchema.safeParse(request.body);
+    if (!parsed.success) {
+      throw new AppError("VALIDATION_ERROR", "Geçersiz istek.", 400, parsed.error.flatten());
+    }
+    const result = await getTargetedQuiz(sub, id, parsed.data);
+    return reply.status(200).send(result);
   });
 };
 

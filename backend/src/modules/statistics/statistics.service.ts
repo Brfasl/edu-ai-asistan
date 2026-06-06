@@ -68,7 +68,6 @@ export async function getCoursePerformance(ownerId: string, query: WeeklySummary
     byCourse.set(course, agg);
   }
 
-  // Simple “score”: study minutes + tests*10 + xp/10, normalized to 0-100.
   const scored = Array.from(byCourse.entries()).map(([course, agg]) => {
     const raw = agg.minutes + agg.tests * 10 + agg.xp / 10;
     return { course, ...agg, raw };
@@ -89,3 +88,87 @@ export async function getCoursePerformance(ownerId: string, query: WeeklySummary
   return { since: since.toISOString(), days: query.days, items };
 }
 
+export async function getProfileStats(ownerId: string) {
+  const rows = await prisma.studyActivity.findMany({
+    where: { ownerId },
+    select: { type: true, count: true, xp: true, createdAt: true },
+    orderBy: { createdAt: "asc" },
+  });
+
+  const totalXp = rows
+    .filter((r) => r.type === "xp")
+    .reduce((s, r) => s + (r.xp ?? 0), 0);
+  const totalTests = rows
+    .filter((r) => r.type === "test")
+    .reduce((s, r) => s + (r.count ?? 0), 0);
+  const totalStudyMinutes = rows
+    .filter((r) => r.type === "study")
+    .reduce((s, r) => s + ((r as any).minutes ?? 0), 0);
+
+  // Streak: today backward, consecutive days with any activity
+  const activityDates = new Set(
+    rows.map((r) => r.createdAt.toISOString().split("T")[0])
+  );
+  let streak = 0;
+  const today = new Date();
+  for (let i = 0; i <= 365; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const key = d.toISOString().split("T")[0];
+    if (activityDates.has(key)) {
+      streak++;
+    } else if (i > 0) {
+      break;
+    }
+  }
+
+  return { totalXp, totalTests, totalStudyMinutes, streak };
+}
+
+export async function getDailyActivity(ownerId: string, query: WeeklySummaryQuery) {
+  const days = query.days;
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+
+  const rows = await prisma.studyActivity.findMany({
+    where: { ownerId, createdAt: { gte: since } },
+    select: { type: true, count: true, xp: true, minutes: true, createdAt: true },
+    orderBy: { createdAt: "asc" },
+  });
+
+  const DAY_LABELS = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
+
+  const result = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const dayStart = new Date();
+    dayStart.setHours(0, 0, 0, 0);
+    dayStart.setDate(dayStart.getDate() - i);
+
+    const dayEnd = new Date(dayStart);
+    dayEnd.setHours(23, 59, 59, 999);
+
+    const dayRows = rows.filter(
+      (r) => r.createdAt >= dayStart && r.createdAt <= dayEnd
+    );
+
+    const testCount = dayRows
+      .filter((r) => r.type === "test")
+      .reduce((s, r) => s + (r.count ?? 0), 0);
+    const xp = dayRows
+      .filter((r) => r.type === "xp")
+      .reduce((s, r) => s + (r.xp ?? 0), 0);
+    const studyMinutes = dayRows
+      .filter((r) => r.type === "study")
+      .reduce((s, r) => s + (r.minutes ?? 0), 0);
+
+    result.push({
+      label: DAY_LABELS[dayStart.getDay()],
+      date: dayStart.toISOString().split("T")[0],
+      testCount,
+      xp,
+      studyMinutes,
+      isToday: i === 0,
+    });
+  }
+
+  return { days: result };
+}
