@@ -19,6 +19,8 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="login" options={{ presentation: 'modal', title: 'Giriş' }} />
+          <Stack.Screen name="forgot-password" options={{ presentation: 'modal', title: 'Şifremi Unuttum' }} />
+          <Stack.Screen name="reset-password" options={{ presentation: 'modal', title: 'Şifre Sıfırla' }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         </Stack>
         <StatusBar style="auto" />

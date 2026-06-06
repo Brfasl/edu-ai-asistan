@@ -1,10 +1,12 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import { ScrollView, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
 import { useAuth } from '@/features/common/auth/auth-context';
+import { getProfileStats } from '@/features/common/stats/stats-api';
 import { formatDisplayName, getInitial } from '@/features/common/utils/name';
 
 import { styles } from './style';
@@ -24,8 +26,22 @@ const SETTINGS = [
 
 export default function ProfileTabScreen() {
   const { user, token, logout } = useAuth();
+  const [profileStats, setProfileStats] = useState(null);
   const displayName = formatDisplayName(user?.name) || user?.email || 'Misafir';
   const initial = getInitial(displayName) || 'B';
+
+  useEffect(() => {
+    if (!token) {
+      setProfileStats(null);
+      return;
+    }
+    getProfileStats({ token }).then(setProfileStats).catch(() => {});
+  }, [token]);
+
+  const totalXp = profileStats?.totalXp ?? 0;
+  const streak = profileStats?.streak ?? 0;
+  const level = Math.max(1, Math.floor(totalXp / 100) + 1);
+
   return (
     <View style={styles.screen}>
       <SafeAreaView style={styles.safeArea}>
@@ -51,29 +67,32 @@ export default function ProfileTabScreen() {
                 <Text style={styles.avatarInitials}>{initial}</Text>
               </View>
               <View style={styles.levelBadge}>
-                <Text style={styles.levelBadgeText}>LVL 12</Text>
+                <Text style={styles.levelBadgeText}>LVL {level}</Text>
               </View>
             </View>
             <Text style={styles.name}>{displayName}</Text>
-            <Text style={styles.school}>MARMARA UNIVERSITESI</Text>
-            <Text style={styles.studentId}>No: 123456</Text>
+            {user?.email ? <Text style={styles.school}>{user.email}</Text> : null}
 
             <View style={styles.statsRow}>
-              <View style={styles.pill}>
-                <Ionicons name="flame" size={15} color="#FF8A3D" />
-                <Text style={styles.pillText}>5 Gunluk Seri</Text>
-              </View>
-              <View style={styles.pill}>
-                <Ionicons name="leaf-outline" size={15} color="#2BE26E" />
-                <Text style={styles.pillText}>Bilgi Avcisi</Text>
-              </View>
+              {streak > 0 ? (
+                <View style={styles.pill}>
+                  <Ionicons name="flame" size={15} color="#FF8A3D" />
+                  <Text style={styles.pillText}>{streak} Gunluk Seri</Text>
+                </View>
+              ) : null}
+              {totalXp > 0 ? (
+                <View style={styles.pill}>
+                  <Ionicons name="leaf-outline" size={15} color="#2BE26E" />
+                  <Text style={styles.pillText}>{totalXp} XP</Text>
+                </View>
+              ) : null}
             </View>
           </View>
 
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Rozet Vitrini</Text>
             <View style={styles.xpBadge}>
-              <Text style={styles.xpBadgeText}>Toplam XP: 1250</Text>
+              <Text style={styles.xpBadgeText}>Toplam XP: {totalXp}</Text>
             </View>
           </View>
 
@@ -91,9 +110,12 @@ export default function ProfileTabScreen() {
 
           <View style={styles.settingsCard}>
             {SETTINGS.map((item, index) => (
-              <View
+              <Pressable
                 key={item.id}
-                style={[styles.settingsRow, index < SETTINGS.length - 1 ? styles.settingsRowDivider : null]}>
+                style={[styles.settingsRow, index < SETTINGS.length - 1 ? styles.settingsRowDivider : null]}
+                onPress={() => {
+                  if (item.id === 'password') router.push('/forgot-password');
+                }}>
                 <View style={styles.settingsLeft}>
                   <View style={styles.settingsIconWrap}>
                     <Ionicons name={item.icon} size={18} color="#A7AFBD" />
@@ -101,7 +123,7 @@ export default function ProfileTabScreen() {
                   <Text style={styles.settingsText}>{item.title}</Text>
                 </View>
                 <Ionicons name="chevron-forward" size={16} color="#6F7788" />
-              </View>
+              </Pressable>
             ))}
           </View>
 

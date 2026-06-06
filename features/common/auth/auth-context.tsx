@@ -18,6 +18,15 @@ type AuthContextValue = {
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (email: string, password: string, name?: string) => Promise<void>;
+  socialLogin: (
+    provider: 'google' | 'apple',
+    idToken?: string,
+    name?: string,
+    options?: { code?: string; redirectUri?: string }
+  ) => Promise<void>;
+  forgotPassword: (email: string) => Promise<void>;
+  resetPassword: (email: string, code: string, newPassword: string) => Promise<void>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshMe: () => Promise<void>;
 };
@@ -30,7 +39,6 @@ function canUseWebStorage() {
 
 async function canUseSecureStore() {
   try {
-    // Some runtimes (web / misconfigured native) expose the module but not the native methods.
     if (typeof SecureStore?.getItemAsync !== 'function' || typeof SecureStore?.setItemAsync !== 'function') {
       return false;
     }
@@ -121,7 +129,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return;
     }
     void refreshMe().catch(() => {
-      // Token invalid/expired: clear session
       void writeToken(null);
       setToken(null);
       setUser(null);
@@ -148,6 +155,59 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setToken(t);
   }, []);
 
+  const socialLogin = useCallback(
+    async (
+      provider: 'google' | 'apple',
+      idToken?: string,
+      name?: string,
+      options?: { code?: string; redirectUri?: string }
+    ) => {
+      const res = await apiRequest('/api/v1/users/social-login', {
+        method: 'POST',
+        body: {
+          provider,
+          idToken,
+          name,
+          code: options?.code,
+          redirectUri: options?.redirectUri,
+        },
+      });
+      const t = res?.token || null;
+      await writeToken(t);
+      setToken(t);
+    },
+    []
+  );
+
+  const forgotPassword = useCallback(async (email: string) => {
+    await apiRequest('/api/v1/users/forgot-password', {
+      method: 'POST',
+      body: { email },
+    });
+  }, []);
+
+  const resetPassword = useCallback(
+    async (email: string, code: string, newPassword: string) => {
+      await apiRequest('/api/v1/users/reset-password', {
+        method: 'POST',
+        body: { email, code, newPassword },
+      });
+    },
+    []
+  );
+
+  const changePassword = useCallback(
+    async (currentPassword: string, newPassword: string) => {
+      const t = await readToken();
+      await apiRequest('/api/v1/users/change-password', {
+        method: 'POST',
+        token: t ?? undefined,
+        body: { currentPassword, newPassword },
+      });
+    },
+    []
+  );
+
   const logout = useCallback(async () => {
     await writeToken(null);
     setToken(null);
@@ -155,8 +215,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const value = useMemo<AuthContextValue>(
-    () => ({ token, user, loading, login, register, logout, refreshMe }),
-    [token, user, loading, login, register, logout, refreshMe]
+    () => ({
+      token,
+      user,
+      loading,
+      login,
+      register,
+      socialLogin,
+      forgotPassword,
+      resetPassword,
+      changePassword,
+      logout,
+      refreshMe,
+    }),
+    [token, user, loading, login, register, socialLogin, forgotPassword, resetPassword, changePassword, logout, refreshMe]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
@@ -167,4 +239,3 @@ export function useAuth() {
   if (!ctx) throw new Error('useAuth must be used within AuthProvider');
   return ctx;
 }
-

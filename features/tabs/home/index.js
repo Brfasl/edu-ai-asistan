@@ -1,4 +1,5 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   KeyboardAvoidingView,
@@ -14,6 +15,7 @@ import {
 
 import CustomBottomTabs from '@/components/CustomBottomTabs';
 import { useAuth } from '@/features/common/auth/auth-context';
+import { createGoal as createGoalApi, deleteGoal as deleteGoalApi, getGoals } from '@/features/common/goals/goals-api';
 import { getProfileStats, chatWithAI } from '@/features/common/stats/stats-api';
 
 // ── Storage (web: localStorage, native: in-memory) ────────────
@@ -36,8 +38,19 @@ const storage = {
   },
 };
 
-const GOALS_KEY = 'edu_goals_v1';
-const CHAT_KEY  = 'edu_chat_v1';
+const CHAT_KEY_PREFIX = 'edu_chat_v1';
+
+function chatKeyForUser(userId) {
+  return userId ? `${CHAT_KEY_PREFIX}_${userId}` : null;
+}
+
+function buildWelcomeMessage(userName) {
+  return {
+    id: newId(),
+    role: 'model',
+    content: `Merhaba ${userName}! 👋 Ben EduAI. Sınavlarına hazırlanmana, çalışma planı oluşturmana ve motive kalmana yardımcı olabilirim. Ne sormak istersin?`,
+  };
+}
 
 const GOAL_COLORS = ['#2BE26E', '#4FC3F7', '#B683FF', '#F2D33D', '#FF8A3D', '#FF6B6B'];
 const GOAL_EMOJIS = ['📚', '✍️', '🧪', '🔢', '🌍', '💻', '🎨', '🏋️'];
@@ -256,6 +269,7 @@ export default function HomeTabScreen() {
   const userName = user?.name?.split(' ')[0] || user?.email?.split('@')[0] || 'Öğrenci';
 
   const [goals, setGoals] = useState([]);
+  const [goalsLoading, setGoalsLoading] = useState(false);
   const [showAddGoal, setShowAddGoal] = useState(false);
   const [newGoalTitle, setNewGoalTitle] = useState('');
   const [newGoalDate, setNewGoalDate] = useState('');
@@ -270,53 +284,73 @@ export default function HomeTabScreen() {
   const [profileStats, setProfileStats] = useState(null);
 
   useEffect(() => {
-    const savedGoals = storage.get(GOALS_KEY);
-    if (Array.isArray(savedGoals)) setGoals(savedGoals);
+    if (!token || !user?.id) {
+      setGoals([]);
+      setMessages([buildWelcomeMessage('Öğrenci')]);
+      setProfileStats(null);
+      return;
+    }
 
-    const savedChat = storage.get(CHAT_KEY);
+    setGoalsLoading(true);
+    getGoals({ token })
+      .then(setGoals)
+      .catch(() => setGoals([]))
+      .finally(() => setGoalsLoading(false));
+
+    const chatKey = chatKeyForUser(user.id);
+    const savedChat = chatKey ? storage.get(chatKey) : null;
     if (Array.isArray(savedChat) && savedChat.length > 0) {
       setMessages(savedChat);
     } else {
-      setMessages([{
-        id: newId(),
-        role: 'model',
-        content: `Merhaba ${userName}! 👋 Ben EduAI. Sınavlarına hazırlanmana, çalışma planı oluşturmana ve motive kalmana yardımcı olabilirim. Ne sormak istersin?`,
-      }]);
+      setMessages([buildWelcomeMessage(userName)]);
     }
-  }, []);
+  }, [token, user?.id, userName]);
 
   useEffect(() => {
     if (!token) return;
     getProfileStats({ token }).then(setProfileStats).catch(() => {});
   }, [token]);
 
-  function saveGoals(newGoals) {
-    setGoals(newGoals);
-    storage.set(GOALS_KEY, newGoals);
-  }
-
   function saveMessages(newMsgs) {
     const trimmed = newMsgs.slice(-30);
     setMessages(trimmed);
-    storage.set(CHAT_KEY, trimmed);
+    const chatKey = chatKeyForUser(user?.id);
+    if (chatKey) storage.set(chatKey, trimmed);
   }
 
-  function addGoal() {
+  async function addGoal() {
+    if (!token) {
+      router.push('/login');
+      return;
+    }
     if (!newGoalTitle.trim() || !newGoalDate) return;
-    const goal = {
-      id: Date.now().toString(),
-      title: newGoalTitle.trim(),
-      examDate: newGoalDate,
-      color: newGoalColor,
-      emoji: newGoalEmoji,
-      addedAt: new Date().toISOString(),
-    };
-    saveGoals([...goals, goal]);
-    setNewGoalTitle('');
-    setNewGoalDate('');
-    setNewGoalColor(GOAL_COLORS[0]);
-    setNewGoalEmoji(GOAL_EMOJIS[0]);
-    setShowAddGoal(false);
+    try {
+      const goal = await createGoalApi({
+        token,
+        title: newGoalTitle.trim(),
+        examDate: newGoalDate,
+        color: newGoalColor,
+        emoji: newGoalEmoji,
+      });
+      if (goal) setGoals((prev) => [...prev, goal]);
+      setNewGoalTitle('');
+      setNewGoalDate('');
+      setNewGoalColor(GOAL_COLORS[0]);
+      setNewGoalEmoji(GOAL_EMOJIS[0]);
+      setShowAddGoal(false);
+    } catch {
+      // ignore
+    }
+  }
+
+  async function removeGoal(id) {
+    if (!token) return;
+    try {
+      await deleteGoalApi({ token, id });
+      setGoals((prev) => prev.filter((g) => g.id !== id));
+    } catch {
+      // ignore
+    }
   }
 
   function handleAskAIAboutGoal(goal) {
@@ -329,6 +363,21 @@ export default function HomeTabScreen() {
   const sendMessage = useCallback(async (text) => {
     const content = (text || inputText).trim();
     if (!content || aiLoading) return;
+
+    if (!token) {
+      saveMessages([
+        ...messages,
+        { id: newId(), role: 'user', content },
+        {
+          id: newId(),
+          role: 'model',
+          content: 'EduAI ile konuşmak için önce giriş yapmalısın. Profil sekmesinden giriş yapabilirsin.',
+        },
+      ]);
+      setInputText('');
+      return;
+    }
+
     setInputText('');
 
     const userMsg = { id: newId(), role: 'user', content };
@@ -348,19 +397,22 @@ export default function HomeTabScreen() {
       const aiMsg = { id: newId(), role: 'model', content: reply };
       saveMessages([...nextMsgs, aiMsg]);
     } catch (e) {
+      const is401 = e?.status === 401;
       const is503 = e?.message?.includes('503') || e?.message?.includes('high demand');
       saveMessages([...nextMsgs, {
         id: newId(),
         role: 'model',
-        content: is503
-          ? 'Gemini şu an çok yoğun 😅 Birkaç saniye bekleyip tekrar dene.'
-          : 'Üzgünüm, bir hata oluştu. Lütfen tekrar dene.',
+        content: is401
+          ? 'Oturumun sona ermiş olabilir. Lütfen tekrar giriş yap.'
+          : is503
+            ? 'Gemini şu an çok yoğun 😅 Birkaç saniye bekleyip tekrar dene.'
+            : 'Üzgünüm, bir hata oluştu. Lütfen tekrar dene.',
       }]);
     } finally {
       setAiLoading(false);
       setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 150);
     }
-  }, [inputText, messages, goals, token, aiLoading]);
+  }, [inputText, messages, goals, token, aiLoading, user?.id]);
 
   const urgentGoals = goals
     .map((g) => ({ ...g, dl: daysLeftCalc(g.examDate) }))
@@ -420,10 +472,26 @@ export default function HomeTabScreen() {
             </Pressable>
           )}
 
+          {/* Giriş uyarısı */}
+          {!token && (
+            <Pressable style={s.loginBanner} onPress={() => router.push('/login')}>
+              <Ionicons name="log-in-outline" size={16} color="#2BE26E" />
+              <Text style={s.loginBannerText}>Hedeflerini kaydetmek ve EduAI kullanmak için giriş yap</Text>
+            </Pressable>
+          )}
+
           {/* Hedefler başlık */}
           <View style={s.sectionHeader}>
             <Text style={s.sectionTitle}>Hedeflerim</Text>
-            <Pressable style={s.addBtn} onPress={() => setShowAddGoal((v) => !v)}>
+            <Pressable
+              style={s.addBtn}
+              onPress={() => {
+                if (!token) {
+                  router.push('/login');
+                  return;
+                }
+                setShowAddGoal((v) => !v);
+              }}>
               <Ionicons name={showAddGoal ? 'close' : 'add'} size={16} color="#2BE26E" />
               <Text style={s.addBtnText}>{showAddGoal ? 'Kapat' : 'Ekle'}</Text>
             </Pressable>
@@ -481,7 +549,13 @@ export default function HomeTabScreen() {
           {goals.length === 0 && !showAddGoal ? (
             <View style={s.emptyGoals}>
               <Text style={{ fontSize: 28 }}>🎯</Text>
-              <Text style={s.emptyGoalsText}>Henüz hedef yok.{'\n'}Sınavını veya ödevini ekle!</Text>
+              <Text style={s.emptyGoalsText}>
+                {goalsLoading
+                  ? 'Hedefler yükleniyor...'
+                  : token
+                    ? 'Henüz hedef yok.\nSınavını veya ödevini ekle!'
+                    : 'Giriş yaparak hedeflerini kaydedebilirsin.'}
+              </Text>
             </View>
           ) : (
             <View style={s.goalsGrid}>
@@ -523,11 +597,7 @@ export default function HomeTabScreen() {
                 <Text style={s.sectionTitle}>EduAI Asistan</Text>
               </View>
               <Pressable onPress={() => {
-                const welcome = [{
-                  id: newId(), role: 'model',
-                  content: `Merhaba ${userName}! 👋 Ben EduAI. Sınavlarına hazırlanmana, çalışma planı oluşturmana ve motive kalmana yardımcı olabilirim. Ne sormak istersin?`,
-                }];
-                saveMessages(welcome);
+                saveMessages([buildWelcomeMessage(userName)]);
               }}>
                 <Text style={s.clearChat}>Temizle</Text>
               </Pressable>
@@ -599,7 +669,7 @@ export default function HomeTabScreen() {
       <GoalDetailModal
         goal={selectedGoal}
         onClose={() => setSelectedGoal(null)}
-        onDelete={(id) => saveGoals(goals.filter((g) => g.id !== id))}
+        onDelete={removeGoal}
         onAskAI={handleAskAIAboutGoal}
       />
 
@@ -624,6 +694,8 @@ const s = StyleSheet.create({
 
   urgentBanner: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: 'rgba(242,211,61,0.08)', borderRadius: 12, borderWidth: 1, borderColor: 'rgba(242,211,61,0.25)', paddingHorizontal: 14, paddingVertical: 10, marginBottom: 16 },
   urgentText: { color: '#D4BC50', fontSize: 13, flex: 1 },
+  loginBanner: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: 'rgba(43,226,110,0.08)', borderRadius: 12, borderWidth: 1, borderColor: 'rgba(43,226,110,0.25)', paddingHorizontal: 14, paddingVertical: 10, marginBottom: 16 },
+  loginBannerText: { color: '#2BE26E', fontSize: 13, flex: 1, fontWeight: '600' },
 
   sectionHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
   sectionTitle: { color: '#EEF3FF', fontSize: 19, fontWeight: '800' },

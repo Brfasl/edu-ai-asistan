@@ -1,6 +1,7 @@
 import type { FastifyPluginAsync } from "fastify";
 import { aiPlugin } from "../ai/ai.plugin";
 import { documentsPlugin } from "../documents/documents.plugin";
+import { goalsPlugin } from "../goals/goals.plugin";
 import { statisticsPlugin } from "../statistics/statistics.plugin";
 import { usersPlugin } from "../users/users.plugin";
 
@@ -12,6 +13,7 @@ export const v1Plugin: FastifyPluginAsync = async (app) => {
 
   await app.register(usersPlugin, { prefix: "/users" });
   await app.register(documentsPlugin, { prefix: "/documents" });
+  await app.register(goalsPlugin, { prefix: "/goals" });
   await app.register(statisticsPlugin, { prefix: "/stats" });
   await app.register(aiPlugin, { prefix: "/ai" });
 };
