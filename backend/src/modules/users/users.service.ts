@@ -117,9 +117,12 @@ async function verifyGoogleToken(
     }
 
     const audience = data.aud || data.audience;
-    if (env.GOOGLE_CLIENT_ID && audience) {
+    const allowedClients = [env.GOOGLE_CLIENT_ID, env.GOOGLE_IOS_CLIENT_ID].filter(
+      (value): value is string => !!value
+    );
+    if (allowedClients.length > 0 && audience) {
       const audiences = audience.split(",").map((s) => s.trim());
-      if (!audiences.includes(env.GOOGLE_CLIENT_ID)) {
+      if (!audiences.some((aud) => allowedClients.includes(aud))) {
         throw new Error("Google token bu uygulama için geçerli değil.");
       }
     }

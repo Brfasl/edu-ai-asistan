@@ -18,6 +18,7 @@ const envSchema = z.object({
   SMTP_FROM: z.string().optional(),
   // Google OAuth (isteğe bağlı)
   GOOGLE_CLIENT_ID: z.string().optional(),
+  GOOGLE_IOS_CLIENT_ID: z.string().optional(),
   // Apple Sign In (isteğe bağlı)
   APPLE_TEAM_ID: z.string().optional(),
   APPLE_KEY_ID: z.string().optional(),

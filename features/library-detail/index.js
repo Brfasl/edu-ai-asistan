@@ -535,13 +535,6 @@ export default function LibraryDocumentDetailScreen() {
         </View>
 
         {renderContent()}
-
-        <View style={styles.chatFloating}>
-          <Text style={styles.chatBubble}>Merhaba! Sorun var mi?</Text>
-          <Pressable style={styles.chatButton}>
-            <Ionicons name="chatbubble-ellipses" size={18} color="#1A112B" />
-          </Pressable>
-        </View>
       </ScrollView>
 
       <CustomBottomTabs activeRoute="Library" />

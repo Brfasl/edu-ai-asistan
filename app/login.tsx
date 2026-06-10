@@ -1,10 +1,11 @@
+import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import * as Google from 'expo-auth-session/providers/google';
 import { makeRedirectUri, ResponseType, useAuthRequest } from 'expo-auth-session';
 import { router } from 'expo-router';
 import * as WebBrowser from 'expo-web-browser';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Linking, Platform, Pressable, Text, TextInput, View } from 'react-native';
 
 import { useAuth } from '@/features/common/auth/auth-context';
@@ -16,7 +17,27 @@ const GOOGLE_WEB_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID ?? '';
 const GOOGLE_IOS_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ?? '';
 const GOOGLE_ANDROID_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID ?? '';
 
-const GOOGLE_REDIRECT_URI = makeRedirectUri();
+function isExpoGo() {
+  return Constants.appOwnership === 'expo';
+}
+
+function getGoogleRedirectUri() {
+  if (Platform.OS === 'web') {
+    return makeRedirectUri();
+  }
+
+  // Expo Go cannot register the Google reversed-client-id URL scheme.
+  if (isExpoGo()) {
+    return undefined;
+  }
+
+  const nativeClientId =
+    Platform.OS === 'ios' ? GOOGLE_IOS_CLIENT_ID : GOOGLE_ANDROID_CLIENT_ID;
+  if (!nativeClientId) return undefined;
+
+  const prefix = nativeClientId.replace('.apps.googleusercontent.com', '');
+  return `com.googleusercontent.apps.${prefix}:/oauthredirect`;
+}
 const APPLE_SERVICE_ID = process.env.EXPO_PUBLIC_APPLE_SERVICE_ID ?? '';
 const APPLE_REDIRECT_URI = makeRedirectUri();
 
@@ -25,10 +46,18 @@ const APPLE_DISCOVERY = {
   tokenEndpoint: 'https://appleid.apple.com/auth/token',
 };
 
+function getGoogleClientIds() {
+  return {
+    webClientId: GOOGLE_WEB_CLIENT_ID || undefined,
+    iosClientId: GOOGLE_IOS_CLIENT_ID || undefined,
+    androidClientId: GOOGLE_ANDROID_CLIENT_ID || undefined,
+  };
+}
+
 function isGoogleConfigured() {
   if (Platform.OS === 'web') return !!GOOGLE_WEB_CLIENT_ID;
-  if (Platform.OS === 'ios') return !!(GOOGLE_IOS_CLIENT_ID || GOOGLE_WEB_CLIENT_ID);
-  if (Platform.OS === 'android') return !!(GOOGLE_ANDROID_CLIENT_ID || GOOGLE_WEB_CLIENT_ID);
+  if (Platform.OS === 'ios') return !!(GOOGLE_IOS_CLIENT_ID && GOOGLE_WEB_CLIENT_ID);
+  if (Platform.OS === 'android') return !!(GOOGLE_ANDROID_CLIENT_ID && GOOGLE_WEB_CLIENT_ID);
   return false;
 }
 
@@ -128,48 +157,110 @@ function GoogleSignInButton({
   onSuccess,
 }: GoogleSignInButtonProps) {
   const { socialLogin } = useAuth();
+  const authInProgress = useRef(false);
 
-  const [, , promptGoogleAsync] = Google.useAuthRequest({
-    webClientId: GOOGLE_WEB_CLIENT_ID || undefined,
-    iosClientId: GOOGLE_IOS_CLIENT_ID || undefined,
-    androidClientId: GOOGLE_ANDROID_CLIENT_ID || undefined,
-    redirectUri: GOOGLE_REDIRECT_URI,
+  const googleClientIds = getGoogleClientIds();
+  const googleRedirectUri = useMemo(() => getGoogleRedirectUri(), []);
+
+  const [request, response, promptGoogleAsync] = Google.useAuthRequest({
+    ...googleClientIds,
+    ...(googleRedirectUri ? { redirectUri: googleRedirectUri } : {}),
     scopes: ['openid', 'profile', 'email'],
+    extraParams: { prompt: 'select_account' },
   });
+  const responseRef = useRef(response);
+  responseRef.current = response;
+
+  useEffect(() => {
+    void WebBrowser.dismissAuthSession();
+  }, []);
+
+  async function waitForGoogleTokens(
+    before: typeof response,
+    timeoutMs = 8000
+  ) {
+    const startedAt = Date.now();
+    while (Date.now() - startedAt < timeoutMs) {
+      const latest = responseRef.current;
+      const idToken =
+        latest?.authentication?.idToken ??
+        (latest?.params as { id_token?: string })?.id_token;
+      const accessToken = latest?.authentication?.accessToken;
+
+      const responseChanged =
+        latest !== before ||
+        latest?.params?.code !== before?.params?.code ||
+        latest?.authentication !== before?.authentication;
+
+      if (responseChanged && (idToken || accessToken)) {
+        return { idToken, accessToken };
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 200));
+    }
+    return { idToken: undefined, accessToken: undefined };
+  }
 
   async function onPress() {
-    try {
-      onError('');
-      const result = await promptGoogleAsync();
-      if (result?.type !== 'success') return;
+    if (disabled || authInProgress.current) return;
+    if (!request) {
+      onError('Google girişi yükleniyor, lütfen birkaç saniye bekleyip tekrar deneyin.');
+      return;
+    }
 
-      const idToken =
-        result.authentication?.idToken ?? (result.params as { id_token?: string })?.id_token;
-      const accessToken = result.authentication?.accessToken;
+    authInProgress.current = true;
+    onSubmittingChange(true);
+    onError('');
+
+    const responseBeforePrompt = responseRef.current;
+
+    try {
+      const result = await promptGoogleAsync();
+
+      if (result?.type === 'cancel' || result?.type === 'dismiss') return;
+      if (result?.type !== 'success') {
+        onError('Google girişi tamamlanamadı.');
+        return;
+      }
+
+      let idToken =
+        result.authentication?.idToken ??
+        (result.params as { id_token?: string })?.id_token;
+      let accessToken = result.authentication?.accessToken;
+
+      if (!idToken && !accessToken) {
+        const exchanged = await waitForGoogleTokens(responseBeforePrompt);
+        idToken = exchanged.idToken;
+        accessToken = exchanged.accessToken;
+      }
 
       if (!idToken && !accessToken) {
         onError('Google girişi başarısız: token alınamadı.');
         return;
       }
 
-      onSubmittingChange(true);
       await socialLogin('google', idToken || accessToken!);
       onSuccess();
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : 'Google girişi başarısız.';
       onError(message);
     } finally {
+      authInProgress.current = false;
       onSubmittingChange(false);
     }
   }
 
+  const waitingForRequest = !request;
+
   return (
     <Pressable
-      style={[styles.googleButton, disabled && { opacity: 0.6 }]}
+      style={[styles.googleButton, (disabled || waitingForRequest) && { opacity: 0.6 }]}
       onPress={onPress}
       disabled={disabled}>
       <Ionicons name="logo-google" size={20} color="#EA4335" />
-      <Text style={styles.googleButtonText}>Google ile Devam Et</Text>
+      <Text style={styles.googleButtonText}>
+        {waitingForRequest ? 'Google hazırlanıyor...' : 'Google ile Devam Et'}
+      </Text>
     </Pressable>
   );
 }
@@ -184,15 +275,27 @@ function GoogleSignInPlaceholder({ disabled }: { disabled: boolean }) {
 }
 
 function GoogleSetupHint() {
+  const iosHint =
+    Platform.OS === 'ios'
+      ? '2. iOS OAuth Client oluştur (Application type: iOS)\n   Bundle ID (Expo Go): host.exp.Exponent\n3. .env dosyasına ekle:\n   EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID=...\n   EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...\n'
+      : Platform.OS === 'android'
+        ? '2. Android OAuth Client oluştur\n3. .env dosyasına EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID ekle\n'
+        : '2. .env dosyasına ekle:\n   EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...\n';
+
   return (
     <View style={styles.setupBox}>
-      <Text style={styles.setupTitle}>Google girişi için yapılandırma gerekli</Text>
+      <Text style={styles.setupTitle}>Google girişi için ek yapılandırma gerekli</Text>
       <Text style={styles.setupText}>
-        1. Google Cloud Console&apos;da Web OAuth Client ID oluştur{'\n'}
-        2. Proje kökünde .env dosyasına ekle:{'\n'}
-        EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=...{'\n'}
-        3. Redirect URI: {GOOGLE_REDIRECT_URI}{'\n'}
-        4. npm start ile Expo&apos;yu yeniden başlat
+        1. Google Cloud Console → Credentials{'\n'}
+        {iosHint}
+        {Platform.OS === 'web' ? `3. Redirect URI: ${makeRedirectUri()}\n` : ''}
+        {Platform.OS === 'ios'
+          ? `3. iOS redirect: ${getGoogleRedirectUri() ?? '—'}\n`
+          : ''}
+        {Platform.OS === 'ios' && isExpoGo()
+          ? 'Not: Expo Go ile Google iOS girişi sınırlı olabilir. Web (w) veya development build deneyin.\n'
+          : ''}
+        Son adım: npm start ile Expo&apos;yu yeniden başlat
       </Text>
       <Pressable onPress={() => Linking.openURL('https://console.cloud.google.com/apis/credentials')}>
         <Text style={styles.setupLink}>Google Cloud Console&apos;u aç →</Text>

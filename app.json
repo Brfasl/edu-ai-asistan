@@ -11,7 +11,17 @@
     "ios": {
       "supportsTablet": true,
       "usesAppleSignIn": true,
-      "bundleIdentifier": "com.eduaiasistan.app"
+      "bundleIdentifier": "com.eduaiasistan.app",
+      "appleTeamId": "TXT94LK4XF",
+      "infoPlist": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.85722190395-oa3jnjrnp4l7vshrhs479g1rqf6j15eu"
+            ]
+          }
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {

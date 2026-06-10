@@ -12,7 +12,8 @@
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
     "db:up": "docker compose up -d",
-    "db:down": "docker compose down -v",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v",
     "postinstall": "prisma generate"
   },
   "dependencies": {

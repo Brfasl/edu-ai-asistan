@@ -22,7 +22,14 @@ export function registerHttpResponses(app: FastifyInstance, _env: Env) {
       error instanceof Prisma.PrismaClientUnknownRequestError
     ) {
       const code = (error as { code?: string }).code;
-      if (code === "P1001" || code === "P1002" || code === "P2024") {
+      const message = error instanceof Error ? error.message : "";
+      const dbUnreachable =
+        code === "P1001" ||
+        code === "P1002" ||
+        code === "P2024" ||
+        message.includes("Can't reach database server");
+
+      if (dbUnreachable) {
         app.log.error({ err: error }, "Database unavailable");
         return reply.status(503).send({
           error: {
